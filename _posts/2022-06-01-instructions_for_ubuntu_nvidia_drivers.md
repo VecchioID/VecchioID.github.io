@@ -34,8 +34,9 @@ enroll mok;continue;yes;input passwd;reboot;
 > sudo dpkg -i xxxxx
 
 
-
+---
 ### 2.1 visit the web to obey the instructions provided by nvidia:
+---
    
 https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_local
 
@@ -130,13 +131,3 @@ cuDNN安装完成，通过如下命令查看cudnn下版本信息
 uninstall cuda toolkit:
 
     $ sudo apt-get --purge remove "*cublas*" "cuda*"
-
----
-
----
-
-
-
-
-
-

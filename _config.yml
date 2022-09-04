@@ -12,10 +12,10 @@ url: "https://vecchioid.github.io/"
 enableToc: true
 
 # Comment
-comment:
-    # livere: MTAyMC81MDk5NC8yNzQ3Ng  # https://www.livere.com
-    disqus: Vecchio
-    # uyan: 2143225  # 有言id,登录有言官网申请
+# comment:
+#     # livere: MTAyMC81MDk5NC8yNzQ3Ng  # https://www.livere.com
+#     disqus: Vecchio
+#     # uyan: 2143225  # 有言id,登录有言官网申请
 
 # Social
 social:

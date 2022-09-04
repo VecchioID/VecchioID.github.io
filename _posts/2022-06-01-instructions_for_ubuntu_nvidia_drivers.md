@@ -9,11 +9,11 @@ tags: Nvidia Drivers
 ---
 ## 1. install ubuntu Nvidia drivers
 ---
-'''python
+
     $ ubuntu-drivers devices # display alternaive version of nvidia drivers
 
     $ sudo apt install nvidia-driver-515
-'''
+
 or choose to install driver and cuda automatically:
 
     $ sudo ubuntu-drivers autoinstall

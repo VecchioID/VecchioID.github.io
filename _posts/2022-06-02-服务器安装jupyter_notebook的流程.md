@@ -60,9 +60,9 @@ tags: Dev_tools
 
     nohup jupyter notebook
 
-使用 ps  -ef | grep nohup.sh 查看后台的任务
+使用 `ps  -ef | grep nohup.sh` 查看后台的任务
 
-kill -9 PID 杀死任务， 使用 ps aux | grep myScript.sh 寻找PID
+`kill -9 PID` 杀死任务， 使用 `ps aux | grep myScript.sh` 寻找PID
 
 5、远程访问jupyter notebook
 

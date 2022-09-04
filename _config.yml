@@ -11,7 +11,7 @@ url: "https://vecchioid.github.io/"
 # 博客是否自动生成目录，false为不生成
 enableToc: true
 
-# Comment
+## Comment
 # comment:
 #     # livere: MTAyMC81MDk5NC8yNzQ3Ng  # https://www.livere.com
 #     disqus: Vecchio
@@ -21,9 +21,9 @@ enableToc: true
 social:
     # weibo: 5366874726 
     github: VecchioID
-    # zhihu: panpanleopard
+    # zhihu: xxx
     # juejin: xxx
-    # jianshu: 2ada30d8d0f7
+    # jianshu: xxx
     # twitter: 
     mail: zhaokai_id@foxmail.com
 
@@ -31,12 +31,12 @@ social:
 # 百度统计 
 # 使用博客模板请去掉或者更换 id 
 # baidu:
-#     id: 8ba1c6be0953b6f9c2ba38e57f615421  
+#     id: 8ba1c6be0953b6f9c2basse57f615421  
 
 # Google Analytics
 # 使用博客模板请去掉或者更换 id
 # ga:
-#     id: UA-84134159-3  
+#     id: UA-84134559-3  
 #     host: auto  
 
 

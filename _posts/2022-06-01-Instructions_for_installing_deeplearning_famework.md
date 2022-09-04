@@ -2,13 +2,13 @@
 layout: post
 title: Instructions for  installing deeplearning library on ubuntu linux
 date: 2022-06-01 
-tags: DL Framework    
+tags: DL_Framework    
 ---
 
 
 # Instructions for  installing deeplearning library on ubuntu linux
----
 
+---
 ## 1.Install TensorFlow-GPU
 ---
     pip install tensorflow-gpu==2.8.0 -i https://pypi.tuna.tsinghua.edu.cn/simple/

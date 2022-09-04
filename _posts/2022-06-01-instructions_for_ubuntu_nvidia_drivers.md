@@ -2,7 +2,7 @@
 layout: post
 title: Instructions for install Nvidia drivers cuda and cudnn
 date: 2022-06-01 
-tags: Nvidia Drivers   
+tags: Nvidia_Drivers   
 ---
 
 

@@ -7,7 +7,7 @@ layout: default
   <ol class="post-list">
     {% for post in paginator.posts %}
     <li>
-      <h2 class="post-list__post-title post-title"><a href="{{ post.url }}" title="访问 {{ post.title }}">{{ post.title }}</a></h2>
+      <h2 class="post-list__post-title post-title"><a href="{{ post.url }}" title="Visit {{ post.title }}">{{ post.title }}</a></h2>
       <p class="excerpt">{{ post.content | strip_html | strip_newlines | truncate: 250 }}&hellip;</p>
       <div class="post-list__meta">        
         <time datetime="{{post.date | date: date_to_xmlschema}}" class="post-list__meta--date date">
@@ -21,7 +21,7 @@ layout: default
             <span class="post-list__meta--tags-right">{{ post.tags }}</span>
           </div>
           <div class = "post-list-small-mate">
-          <a class="btn-border-small" href={{ post.url }}>阅读全文 » </a>
+          <a class="btn-border-small" href={{ post.url }}>Read More » </a>
           </div>
       </div>
       <hr class="post-list__divider" />

@@ -5,6 +5,10 @@ date: 2022-09-03
 tags: ML DL    
 ---
 
+---
+# pytorch distributed data parallel
+
+---
 
     # DDP
     import torch

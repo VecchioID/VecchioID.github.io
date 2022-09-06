@@ -9,7 +9,7 @@ tags: ML DL
 # pytorch distributed data parallel
 
 ---
- 下面是一个pytorch的demo。
+下面是一个pytorch的demo。
 
     # DDP
     import torch

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Pytorch DDP Tutorial
-date: 2022-09-03 
+date: 2022-09-04 
 tags: ML DL    
 ---
 

@@ -38,11 +38,11 @@ c.NotebookApp.allow_remote_access = True #允许远程连接 c.NotebookApp.ip='*
 参数化$L_{t}$作为训练损失 这个解释比较清楚： 分布$p_{\theta}(x_{t-1}|x_{t})$是一个高斯分布，其均值和标准差由diffusion模型网络预测产生。而分布$q(x_{t-1}|x_{t},x_{0})$可以根据贝叶斯定律得到也是一个高斯分布，即： 这里面的均值和方差分别为： 最小化这个损失项就是拉近q和p这俩分布的距离。只需要定义一个网络$\mu_{\theta}(x_{t},t)$ ,使用L2约束其预测值同$\tilde \mu_{t}(x_{t},x_{0})$一致即可。这里面假设方差一样的，就不用计算了，降低了计算的难度。因为： $\mu_{\theta}(x_{t},t)$在给定$x_{t}$的情况下，需要预测出，为了进一步降低学习难度，可直接定义： 这样可以继续简化$L_{t}$: 上面这个公式表示在优化的时候，采样和$z_{t}\in \mathcal{N}(0,I)$后计算，然后联合时间$t$，送入$z_{\theta}$，约束其与$z_{t}$一致。]]></description>
 </item>
 <item>
-    <title>DL调参数技巧</title>
-    <link>https://vecchioid.github.io/posts/dl%E8%B0%83%E5%8F%82%E6%8A%80%E5%B7%A7/</link>
+    <title>Tricks for deep learning</title>
+    <link>https://vecchioid.github.io/posts/tricks-for-deep-learning/</link>
     <pubDate>Mon, 02 Jan 2023 12:53:40 &#43;0800</pubDate>
     <author>Vecchio</author>
-    <guid>https://vecchioid.github.io/posts/dl%E8%B0%83%E5%8F%82%E6%8A%80%E5%B7%A7/</guid>
+    <guid>https://vecchioid.github.io/posts/tricks-for-deep-learning/</guid>
     <description><![CDATA[DL 调参技巧 不管什么模型，先在一个较小的训练集上train和test，看看它能不能过拟合。如果不能过拟合，可能是学习率太大，或者代码写错了。先调小学习率试一下，如果还不行就去检查代码，先看dataloader输出的数据对不对，再看模型每一步的size是否符合自己期待。
 看train/eval的loss曲线，正常的情况应该是train loss呈log状一直下降最后趋于稳定，eval loss开始时一直下降到某一个epoch之后开始趋于稳定或开始上升，这时候可以用early stopping保存eval loss最低的那个模型。如果loss曲线非常不正常，很有可能是数据处理出了问题，比如label对应错了，回去检查代码。
 不要一开始就用大数据集，先在一个大概2w训练集，2k测试集的小数据集上调参。

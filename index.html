@@ -56,6 +56,19 @@
 </header><main class="main">
                 <div class="container"><div class="page home" data-home="posts"><div class="home-profile"><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/https://github.com/VecchioID" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/">服务器安装jupyter Notebook流程</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vecchio</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-02">2023-01-02</time></span></div><div class="content">一、ubuntu 下安装jupyter notebook 1、使用conda安装
+conda install jupyter notebook 2、使用pip安装
+pip install jupyter notebook 二、Jupyter notebook配置 1、生成配置文件
+jupyter notebook --generate-config 2、创建密码
+使用python中的 passwd() 创建密码，终端输入 ipython 打开 ipython 并输入：
+In [1]: from notebook.auth import passwd In [2]: passwd() Enter password: ****** Verify password: ****** Out [2]: 'sha1:...' 复制Out [2] 显示的密码（&lsquo;sha1:&hellip;&rsquo; 包括引号）。也可能不是sha开头的。
+3、修改jupyter notebook的配置文件
+打开配置文件
+vim ~/.jupyter/jupyter_notebook_config.py 在该文件中做如下修改或直接在文件尾端添加：
+c.NotebookApp.allow_remote_access = True #允许远程连接 c.NotebookApp.ip='*' # 设置所有ip皆可访问 c.NotebookApp.password = u'sha:..' #之前复制的密码,或者输入的字符 c.NotebookApp.notebook_dir = '/usr/local/spark/mycode/Covid-19-Analysis' # 启动的默认目录 c.</div><div class="post-footer">
+        <a href="/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/dl%E8%B0%83%E5%8F%82%E6%8A%80%E5%B7%A7/">DL调参数技巧</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vecchio</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-02">2023-01-02</time></span></div><div class="content">DL 调参技巧 不管什么模型，先在一个较小的训练集上train和test，看看它能不能过拟合。如果不能过拟合，可能是学习率太大，或者代码写错了。先调小学习率试一下，如果还不行就去检查代码，先看dataloader输出的数据对不对，再看模型每一步的size是否符合自己期待。
 看train/eval的loss曲线，正常的情况应该是train loss呈log状一直下降最后趋于稳定，eval loss开始时一直下降到某一个epoch之后开始趋于稳定或开始上升，这时候可以用early stopping保存eval loss最低的那个模型。如果loss曲线非常不正常，很有可能是数据处理出了问题，比如label对应错了，回去检查代码。

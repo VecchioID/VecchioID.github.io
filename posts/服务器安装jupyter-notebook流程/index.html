@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>服务器安装jupyter Notebook流程 - Vecchio Blog</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="服务器安装jupyter Notebook流程" />
+<meta property="og:description" content="一、ubuntu 下安装jupyter notebook 1、使用conda安装
+conda install jupyter notebook 2、使用pip安装
+pip install jupyter notebook 二、Jupyter notebook配置 1、生成配置文件
+jupyter notebook --generate-config 2、创建密码
+使用python中的 passwd() 创建密码，终端输入 ipython 打开 ipython 并输入：
+In [1]: from notebook.auth import passwd In [2]: passwd() Enter password: ****** Verify password: ****** Out [2]: &#39;sha1:...&#39; 复制Out [2] 显示的密码（&lsquo;sha1:&hellip;&rsquo; 包括引号）。也可能不是sha开头的。
+3、修改jupyter notebook的配置文件
+打开配置文件
+vim ~/.jupyter/jupyter_notebook_config.py 在该文件中做如下修改或直接在文件尾端添加：
+c.NotebookApp.allow_remote_access = True #允许远程连接 c.NotebookApp.ip=&#39;*&#39; # 设置所有ip皆可访问 c.NotebookApp.password = u&#39;sha:..&#39; #之前复制的密码,或者输入的字符 c.NotebookApp.notebook_dir = &#39;/usr/local/spark/mycode/Covid-19-Analysis&#39; # 启动的默认目录 c." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vecchioid.github.io/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-02T13:58:44+08:00" />
+<meta property="article:modified_time" content="2023-01-02T13:58:44+08:00" /><meta property="og:site_name" content="Vecchio Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="服务器安装jupyter Notebook流程"/>
+<meta name="twitter:description" content="一、ubuntu 下安装jupyter notebook 1、使用conda安装
+conda install jupyter notebook 2、使用pip安装
+pip install jupyter notebook 二、Jupyter notebook配置 1、生成配置文件
+jupyter notebook --generate-config 2、创建密码
+使用python中的 passwd() 创建密码，终端输入 ipython 打开 ipython 并输入：
+In [1]: from notebook.auth import passwd In [2]: passwd() Enter password: ****** Verify password: ****** Out [2]: &#39;sha1:...&#39; 复制Out [2] 显示的密码（&lsquo;sha1:&hellip;&rsquo; 包括引号）。也可能不是sha开头的。
+3、修改jupyter notebook的配置文件
+打开配置文件
+vim ~/.jupyter/jupyter_notebook_config.py 在该文件中做如下修改或直接在文件尾端添加：
+c.NotebookApp.allow_remote_access = True #允许远程连接 c.NotebookApp.ip=&#39;*&#39; # 设置所有ip皆可访问 c.NotebookApp.password = u&#39;sha:..&#39; #之前复制的密码,或者输入的字符 c.NotebookApp.notebook_dir = &#39;/usr/local/spark/mycode/Covid-19-Analysis&#39; # 启动的默认目录 c."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://vecchioid.github.io/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/" /><link rel="prev" href="https://vecchioid.github.io/posts/dl%E8%B0%83%E5%8F%82%E6%8A%80%E5%B7%A7/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "服务器安装jupyter Notebook流程",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/vecchioid.github.io\/posts\/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B\/"
+        },"genre": "posts","wordcount":  130 ,
+        "url": "https:\/\/vecchioid.github.io\/posts\/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B\/","datePublished": "2023-01-02T13:58:44+08:00","dateModified": "2023-01-02T13:58:44+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Vecchio"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Vecchio Blog">Vecchio</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Vecchio Blog">Vecchio</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">服务器安装jupyter Notebook流程</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vecchio</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-02">2023-01-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;130 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><h1 id="一ubuntu-下安装jupyter-notebook">一、ubuntu 下安装jupyter notebook</h1>
+<p>1、使用conda安装</p>
+<pre><code>conda install jupyter notebook
+</code></pre>
+<p>2、使用pip安装</p>
+<pre><code>pip install jupyter notebook
+</code></pre>
+<h1 id="二jupyter-notebook配置">二、Jupyter notebook配置</h1>
+<p>1、生成配置文件</p>
+<pre><code>jupyter notebook --generate-config
+</code></pre>
+<p>2、创建密码</p>
+<p>使用python中的 passwd() 创建密码，终端输入 ipython 打开 ipython 并输入：</p>
+<pre><code>In [1]: from notebook.auth import passwd
+In [2]: passwd()
+Enter password: ******
+Verify password: ******
+Out [2]: 'sha1:...'
+</code></pre>
+<p>复制Out [2] 显示的密码（&lsquo;sha1:&hellip;&rsquo; 包括引号）。也可能不是sha开头的。</p>
+<p>3、修改jupyter notebook的配置文件</p>
+<p>打开配置文件</p>
+<pre><code>vim ~/.jupyter/jupyter_notebook_config.py
+</code></pre>
+<p>在该文件中做如下修改或直接在文件尾端添加：</p>
+<pre><code>c.NotebookApp.allow_remote_access = True #允许远程连接
+c.NotebookApp.ip='*' # 设置所有ip皆可访问
+c.NotebookApp.password = u'sha:..' #之前复制的密码,或者输入的字符
+c.NotebookApp.notebook_dir = '/usr/local/spark/mycode/Covid-19-Analysis' # 启动的默认目录
+c.NotebookApp.open_browser = False # 禁止自动打开浏览器
+c.NotebookApp.port =8888 #任意指定一个端口
+</code></pre>
+<p>4、启动 jupyter notebook</p>
+<p>终端输入：</p>
+<pre><code>jupyter notebook
+</code></pre>
+<p>或使用nohup后台运行 jupyter notebook:</p>
+<pre><code>nohup jupyter notebook
+</code></pre>
+<p>使用 <code>ps  -ef | grep nohup.sh</code> 查看后台的任务</p>
+<p><code>kill -9 PID</code> 杀死任务， 使用 <code>ps aux | grep myScript.sh</code> 寻找PID</p>
+<p>5、远程访问jupyter notebook</p>
+<p>本地浏览器输入</p>
+<p>http://(服务器地址):(配置文件中设定的端口)；</p>
+<p>假设服务器地址为192.168.1.129，配置的端口为8888，这里的浏览器输入地址应为</p>
+<p>http://192.168.1.129:8888</p>
+<p>即可访问jupyter notebook。</p>
+<h1 id="三在vscode中使用远程服务器的jupyter">三、在VSCODE中使用远程服务器的jupyter</h1>
+<p>1、在vscode中安装remote ssh， juoyter等插件</p>
+<p>2、ctrl+shift+p 选择连接远程主机</p>
+<p>3、建立起连接后在远程主机中安装 jupyter 插件</p>
+<p>打开或新建一个 jupyter notebook 文件即可使用</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-01-02</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://vecchioid.github.io/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/" data-title="服务器安装jupyter Notebook流程"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://vecchioid.github.io/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://vecchioid.github.io/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/" data-title="服务器安装jupyter Notebook流程"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://vecchioid.github.io/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/" data-title="服务器安装jupyter Notebook流程"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://vecchioid.github.io/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/" data-title="服务器安装jupyter Notebook流程"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/dl%E8%B0%83%E5%8F%82%E6%8A%80%E5%B7%A7/" class="prev" rel="prev" title="DL调参数技巧"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>DL调参数技巧</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

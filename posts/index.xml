@@ -3,7 +3,24 @@
         <title>All Posts - Vecchio Blog</title>
         <link>https://vecchioid.github.io/posts/</link>
         <description>All Posts | Vecchio Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 02 Jan 2023 12:53:40 &#43;0800</lastBuildDate><atom:link href="https://vecchioid.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 02 Jan 2023 13:58:44 &#43;0800</lastBuildDate><atom:link href="https://vecchioid.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>服务器安装jupyter Notebook流程</title>
+    <link>https://vecchioid.github.io/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/</link>
+    <pubDate>Mon, 02 Jan 2023 13:58:44 &#43;0800</pubDate>
+    <author>Vecchio</author>
+    <guid>https://vecchioid.github.io/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/</guid>
+    <description><![CDATA[一、ubuntu 下安装jupyter notebook 1、使用conda安装
+conda install jupyter notebook 2、使用pip安装
+pip install jupyter notebook 二、Jupyter notebook配置 1、生成配置文件
+jupyter notebook --generate-config 2、创建密码
+使用python中的 passwd() 创建密码，终端输入 ipython 打开 ipython 并输入：
+In [1]: from notebook.auth import passwd In [2]: passwd() Enter password: ****** Verify password: ****** Out [2]: 'sha1:...' 复制Out [2] 显示的密码（&lsquo;sha1:&hellip;&rsquo; 包括引号）。也可能不是sha开头的。
+3、修改jupyter notebook的配置文件
+打开配置文件
+vim ~/.jupyter/jupyter_notebook_config.py 在该文件中做如下修改或直接在文件尾端添加：
+c.NotebookApp.allow_remote_access = True #允许远程连接 c.NotebookApp.ip='*' # 设置所有ip皆可访问 c.NotebookApp.password = u'sha:..' #之前复制的密码,或者输入的字符 c.NotebookApp.notebook_dir = '/usr/local/spark/mycode/Covid-19-Analysis' # 启动的默认目录 c.]]></description>
+</item>
+<item>
     <title>DL调参数技巧</title>
     <link>https://vecchioid.github.io/posts/dl%E8%B0%83%E5%8F%82%E6%8A%80%E5%B7%A7/</link>
     <pubDate>Mon, 02 Jan 2023 12:53:40 &#43;0800</pubDate>

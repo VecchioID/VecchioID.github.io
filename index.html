@@ -93,8 +93,17 @@
         data-srcset="/lib/images/avatar.png, /lib/images/avatar.png 1.5x, /lib/images/avatar.png 2x"
         data-sizes="auto"
         alt="/lib/images/avatar.png"
-        title="/lib/images/avatar.png" /></a></div><h1 class="home-title">Vecchio's Blog</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/https://github.com/VecchioID" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a></div></div>
+        title="/lib/images/avatar.png" /></a></div><h1 class="home-title">Vecchio's Blog</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/VecchioID" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/instructions-for-install-nvidia-drivers-cuda-and-cudnn/">Instructions for Install Nvidia Drivers Cuda and Cudnn</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-02">2023-01-02</time></span>&nbsp;<span class="post-category">included in <a href="/categories/deep-learning/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Deep Learning</a></span></div><div class="content">1. install ubuntu Nvidia drivers ubuntu-drivers devices # display alternaive version of nvidia drivers sudo apt install nvidia-driver-515 or choose to install driver and cuda automatically:
+sudo ubuntu-drivers autoinstall Note: after reboot, choose enroll key to input your passwd, after this, nvidia-smi would work.
+enroll mok;continue;yes;input passwd;reboot;
+2. install cuda manual, this tutorial is suitable for ubuntu22.04 x86_x64 deb(local) 补充：由于ubuntu22.04需要安装liburcu6软件包，不然cuda安装会少依赖。所以这里需要自己下载并安装 https://ubuntu.pkgs.org/20.04/ubuntu-main-amd64/liburcu6_0.11.1-2_amd64.deb.html sudo dpkg -i xxxxx
+2.1 visit the web to obey the instructions provided by nvidia: https://developer.</div><div class="post-footer">
+        <a href="/posts/instructions-for-install-nvidia-drivers-cuda-and-cudnn/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/nvidia/">Nvidia</a>,&nbsp;<a href="/tags/cuda/">Cuda</a>,&nbsp;<a href="/tags/cudnn/">Cudnn</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/">服务器安装jupyter Notebook流程</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vecchio</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-02">2023-01-02</time></span></div><div class="content">一、ubuntu 下安装jupyter notebook 1、使用conda安装
 conda install jupyter notebook 2、使用pip安装

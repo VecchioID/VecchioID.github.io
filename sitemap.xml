@@ -2,12 +2,16 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://vecchioid.github.io/posts/</loc><lastmod>2023-01-02T13:58:44&#43;08:00</lastmod></url><url>
-            <loc>https://vecchioid.github.io/</loc><lastmod>2023-01-02T13:58:44&#43;08:00</lastmod></url><url>
+            <loc>https://vecchioid.github.io/categories/</loc><lastmod>2023-01-02T22:12:07&#43;08:00</lastmod></url><url>
+            <loc>https://vecchioid.github.io/tags/cuda/</loc><lastmod>2023-01-02T22:12:07&#43;08:00</lastmod></url><url>
+            <loc>https://vecchioid.github.io/tags/cudnn/</loc><lastmod>2023-01-02T22:12:07&#43;08:00</lastmod></url><url>
+            <loc>https://vecchioid.github.io/categories/deep-learning/</loc><lastmod>2023-01-02T22:12:07&#43;08:00</lastmod></url><url>
+            <loc>https://vecchioid.github.io/posts/instructions-for-install-nvidia-drivers-cuda-and-cudnn/</loc><lastmod>2023-01-02T22:12:07&#43;08:00</lastmod></url><url>
+            <loc>https://vecchioid.github.io/tags/nvidia/</loc><lastmod>2023-01-02T22:12:07&#43;08:00</lastmod></url><url>
+            <loc>https://vecchioid.github.io/posts/</loc><lastmod>2023-01-02T22:12:07&#43;08:00</lastmod></url><url>
+            <loc>https://vecchioid.github.io/tags/</loc><lastmod>2023-01-02T22:12:07&#43;08:00</lastmod></url><url>
+            <loc>https://vecchioid.github.io/</loc><lastmod>2023-01-02T22:12:07&#43;08:00</lastmod></url><url>
             <loc>https://vecchioid.github.io/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/</loc><lastmod>2023-01-02T13:58:44&#43;08:00</lastmod></url><url>
-            <loc>https://vecchioid.github.io/categories/</loc><lastmod>2023-01-02T12:53:40&#43;08:00</lastmod></url><url>
             <loc>https://vecchioid.github.io/posts/ddpm_%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/</loc><lastmod>2023-01-02T12:53:40&#43;08:00</lastmod></url><url>
-            <loc>https://vecchioid.github.io/categories/deep-learning/</loc><lastmod>2023-01-02T12:53:40&#43;08:00</lastmod></url><url>
-            <loc>https://vecchioid.github.io/tags/</loc><lastmod>2023-01-02T12:53:40&#43;08:00</lastmod></url><url>
             <loc>https://vecchioid.github.io/tags/tricks/</loc><lastmod>2023-01-02T12:53:40&#43;08:00</lastmod></url><url>
             <loc>https://vecchioid.github.io/posts/tricks-for-deep-learning/</loc><lastmod>2023-01-02T12:53:40&#43;08:00</lastmod></url></urlset>

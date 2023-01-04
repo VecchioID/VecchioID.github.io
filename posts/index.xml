@@ -7,7 +7,7 @@
     <title>Instructions for Install Nvidia Drivers Cuda and Cudnn</title>
     <link>https://vecchioid.github.io/posts/instructions-for-install-nvidia-drivers-cuda-and-cudnn/</link>
     <pubDate>Mon, 02 Jan 2023 22:12:07 &#43;0800</pubDate>
-    <author>Author</author>
+    <author>Vecchio</author>
     <guid>https://vecchioid.github.io/posts/instructions-for-install-nvidia-drivers-cuda-and-cudnn/</guid>
     <description><![CDATA[1. install ubuntu Nvidia drivers ubuntu-drivers devices # display alternaive version of nvidia drivers sudo apt install nvidia-driver-515 or choose to install driver and cuda automatically:
 sudo ubuntu-drivers autoinstall Note: after reboot, choose enroll key to input your passwd, after this, nvidia-smi would work.

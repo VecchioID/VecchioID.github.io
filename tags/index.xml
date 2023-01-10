@@ -3,7 +3,31 @@
         <title>Tags - Tag - Vecchio Blog</title>
         <link>https://vecchioid.github.io/tags/</link>
         <description>Tags - Tag - Vecchio Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 02 Jan 2023 22:12:07 &#43;0800</lastBuildDate><atom:link href="https://vecchioid.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 10 Jan 2023 14:52:03 &#43;0800</lastBuildDate><atom:link href="https://vecchioid.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>deep learning</title>
+    <link>https://vecchioid.github.io/tags/deep-learning/</link>
+    <pubDate>Tue, 10 Jan 2023 14:52:03 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://vecchioid.github.io/tags/deep-learning/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>machine learning</title>
+    <link>https://vecchioid.github.io/tags/machine-learning/</link>
+    <pubDate>Tue, 10 Jan 2023 14:52:03 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://vecchioid.github.io/tags/machine-learning/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>self supervised learning</title>
+    <link>https://vecchioid.github.io/tags/self-supervised-learning/</link>
+    <pubDate>Tue, 10 Jan 2023 14:52:03 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://vecchioid.github.io/tags/self-supervised-learning/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Cuda</title>
     <link>https://vecchioid.github.io/tags/cuda/</link>
     <pubDate>Mon, 02 Jan 2023 22:12:07 &#43;0800</pubDate>

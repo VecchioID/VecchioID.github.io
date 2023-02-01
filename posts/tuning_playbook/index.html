@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Tuning_playbook - Vecchio Blog</title><meta name="Description" content="Vecchio Blog"><meta property="og:title" content="Tuning_playbook" />
+<meta property="og:description" content="本文是汉化版本
+文档适合什么样的人 这篇文档适用于对优化深度学习模型感兴趣的工程师和研究人员。假定阅读者已经初步具备了机器学习和深度学习相关的基本知识。
+这篇文档的重点在于超参数的调整过程。涉及了一些深度学习训练相关的知识，如pipeline implementation and optimization，但是并不会细致的讲解。
+我们假设机器学习问题是一个监督学习问题，或者看起来类似的如自监督问题，也就是说，本文档中的一些规定也可适用于其他类型的问题。
+为什么需要这本调优手册？ 目前，想要深度神经网络在实践中正常运行，需要付出大量的努力和猜想时间。糟糕的是，很少有人去记录使肾虚学习模型获得良好结果的方法。
+Guide for starting a new project many of the decisions we make over the course of tuning can be made once at the beginging of a project and 只有在情况发生变化的时候才需要重新考虑。
+our guidance below makes the following assumptions:
+问题制定、数据清理等基本工作已经完成，花时间在模型架构和训练配置上是有意义的 已经有一个进行训练和评估的基本pipeline，并且可以为各种感兴趣的模型执行训练和预测工作。 选择好适当的测试标准，这些测试标准应该能够尽可能的反映出实际部署环境所要测量的内容。 选择模型结构 Summary： 当开启一个新项目的时候，尽量使用一个已经work的模型。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vecchioid.github.io/posts/tuning_playbook/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-28T18:53:19+08:00" />
+<meta property="article:modified_time" content="2023-01-28T18:53:19+08:00" /><meta property="og:site_name" content="Vecchio Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tuning_playbook"/>
+<meta name="twitter:description" content="本文是汉化版本
+文档适合什么样的人 这篇文档适用于对优化深度学习模型感兴趣的工程师和研究人员。假定阅读者已经初步具备了机器学习和深度学习相关的基本知识。
+这篇文档的重点在于超参数的调整过程。涉及了一些深度学习训练相关的知识，如pipeline implementation and optimization，但是并不会细致的讲解。
+我们假设机器学习问题是一个监督学习问题，或者看起来类似的如自监督问题，也就是说，本文档中的一些规定也可适用于其他类型的问题。
+为什么需要这本调优手册？ 目前，想要深度神经网络在实践中正常运行，需要付出大量的努力和猜想时间。糟糕的是，很少有人去记录使肾虚学习模型获得良好结果的方法。
+Guide for starting a new project many of the decisions we make over the course of tuning can be made once at the beginging of a project and 只有在情况发生变化的时候才需要重新考虑。
+our guidance below makes the following assumptions:
+问题制定、数据清理等基本工作已经完成，花时间在模型架构和训练配置上是有意义的 已经有一个进行训练和评估的基本pipeline，并且可以为各种感兴趣的模型执行训练和预测工作。 选择好适当的测试标准，这些测试标准应该能够尽可能的反映出实际部署环境所要测量的内容。 选择模型结构 Summary： 当开启一个新项目的时候，尽量使用一个已经work的模型。"/>
+<meta name="application-name" content="Vecchio Blog">
+<meta name="apple-mobile-web-app-title" content="Vecchio Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://vecchioid.github.io/posts/tuning_playbook/" /><link rel="prev" href="https://vecchioid.github.io/posts/meta-learning-tutorials/" /><link rel="next" href="https://vecchioid.github.io/posts/openmmlab_tutorials/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Tuning_playbook",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/vecchioid.github.io\/posts\/tuning_playbook\/"
+        },"genre": "posts","wordcount":  52 ,
+        "url": "https:\/\/vecchioid.github.io\/posts\/tuning_playbook\/","datePublished": "2023-01-28T18:53:19+08:00","dateModified": "2023-01-28T18:53:19+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Vecchio Blog">Vecchio</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Blogs </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/lib/mycv/"> My CV </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Vecchio Blog">Vecchio</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Blogs</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/lib/mycv/" title="">My CV</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Tuning_playbook</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-28">2023-01-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;52 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#选择模型结构">选择模型结构</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>本文是汉化版本</p>
+<h1 id="文档适合什么样的人">文档适合什么样的人</h1>
+<p>这篇文档适用于对优化深度学习模型感兴趣的工程师和研究人员。假定阅读者已经初步具备了机器学习和深度学习相关的基本知识。</p>
+<p>这篇文档的重点在于超参数的调整过程。涉及了一些深度学习训练相关的知识，如pipeline implementation and optimization，但是并不会细致的讲解。</p>
+<p>我们假设机器学习问题是一个监督学习问题，或者看起来类似的如自监督问题，也就是说，本文档中的一些规定也可适用于其他类型的问题。</p>
+<h1 id="为什么需要这本调优手册">为什么需要这本调优手册？</h1>
+<p>目前，想要深度神经网络在实践中正常运行，需要付出大量的努力和猜想时间。糟糕的是，很少有人去记录使肾虚学习模型获得良好结果的方法。</p>
+<h1 id="guide-for-starting-a-new-project">Guide for starting a new project</h1>
+<p>many of the decisions we make over the course of tuning can be made once at the beginging of a project and 只有在情况发生变化的时候才需要重新考虑。</p>
+<p>our guidance below makes the following assumptions:</p>
+<ul>
+<li>问题制定、数据清理等基本工作已经完成，花时间在模型架构和训练配置上是有意义的</li>
+<li>已经有一个进行训练和评估的基本pipeline，并且可以为各种感兴趣的模型执行训练和预测工作。</li>
+<li>选择好适当的测试标准，这些测试标准应该能够尽可能的反映出实际部署环境所要测量的内容。</li>
+</ul>
+<h3 id="选择模型结构">选择模型结构</h3>
+<p><em>Summary：</em> 当开启一个新项目的时候，尽量使用一个已经work的模型。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-01-28</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/meta-learning-tutorials/" class="prev" rel="prev" title="Meta Learning Tutorials"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Meta Learning Tutorials</a>
+            <a href="/posts/openmmlab_tutorials/" class="next" rel="next" title="OpenMMLab_tutorials">OpenMMLab_tutorials<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Keep Study, Stay Awesome!</div><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"","algoliaIndex":"","algoliaSearchKey":"","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

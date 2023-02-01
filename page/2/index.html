@@ -95,6 +95,32 @@
         alt="/lib/images/avatar.png"
         title="/lib/images/avatar.png" /></a></div><h1 class="home-title">Vecchio's Blog</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/VecchioID" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/">服务器安装jupyter Notebook流程</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vecchio</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-02">2023-01-02</time></span></div><div class="content">一、ubuntu 下安装jupyter notebook 1、使用conda安装
+conda install jupyter notebook 2、使用pip安装
+pip install jupyter notebook 二、Jupyter notebook配置 1、生成配置文件
+jupyter notebook --generate-config 2、创建密码
+使用python中的 passwd() 创建密码，终端输入 ipython 打开 ipython 并输入：
+In [1]: from notebook.auth import passwd In [2]: passwd() Enter password: ****** Verify password: ****** Out [2]: 'sha1:...' 复制Out [2] 显示的密码（&lsquo;sha1:&hellip;&rsquo; 包括引号）。也可能不是sha开头的。
+3、修改jupyter notebook的配置文件
+打开配置文件
+vim ~/.jupyter/jupyter_notebook_config.py 在该文件中做如下修改或直接在文件尾端添加：
+c.NotebookApp.allow_remote_access = True #允许远程连接 c.NotebookApp.ip='*' # 设置所有ip皆可访问 c.NotebookApp.password = u'sha:..' #之前复制的密码,或者输入的字符 c.NotebookApp.notebook_dir = '/usr/local/spark/mycode/Covid-19-Analysis' # 启动的默认目录 c.</div><div class="post-footer">
+        <a href="/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/ddpm_%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/">DDPM-公式推导</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vecchio</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-02">2023-01-02</time></span></div><div class="content">一、前向扩散过程 从真实数据中采样一个点：，接下来我们定义一个前向的扩散过程，在这个扩散过程中我们逐步向图像中添加高斯噪声，在$T$步之后产生一个各向同性的高斯分布。在这个过程中会产生一些列的噪声样本，分别为。步长的大小通过一个方差表控制：${\beta_t \in (0, 1)}_{t=1}^T$。
+在扩散的过程中，样本$x_0$逐渐丧失了自己的特征并且随着时间的变化。$T \to \infty$，$x _{T}$会变成各向同性的高斯分布。
+使用重参数技巧，我们可以的得到任意时间点的样本$x_{t}$，令$\alpha_t = 1 - \beta_t$， ：
+二、逆向扩散过程 如果我们能反转上述过程并从$q(\mathbf{x}_{t-1} \vert \mathbf{x}_t)$中进行采样，我们就能从一个标准的高斯分布中$\mathbf{x}_T \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$恢复真实的样本。
+如果$\beta_{t}$足够小，$ q(\mathbf{x}_{t-1} \vert \mathbf{x}_t)$也是一个高斯分布。
+但是是不可解的，因此我们需要学习一个模型$p_{\theta}$来近似这个反向的扩散过程。
+2.1 近似逼近 是什么样的分布？ Feller等人在1949年证明连续扩散过程的逆转具有与正向过程相同的分布形式。 当扩散率$\beta_{t}$足够小的时候，扩散次数足够多时，离散扩散过程接近于连续扩散过程，的分布形式和一致，都是高斯分布。但是很难写出的分布参数，所以要用 $p_{\theta}(x_{t-1}|x_{t})$ 来近似 。 其中$ \mu_{\theta}$和 都是要学习的函数，接受$ x_{t} $和 $t$ 作为参数。
+连续迭代多次后，可以还原得到真实的数据分布$p_{\theta}(x_{0})$为： $$p_{\theta}(x_{0}) = \int p_{\theta}(x_{0:T})dx_{1:T}$$ 其中： 以上是近似分布$p_{\theta}(x_{t-1}|x_{t})$的分析过程，
+这个形式和VAE很像，因此我们可以用变分下界去优化 负的对数似然函数： 这个我比较熟悉，通过Jensen不等式也能直观的得到以上结果，这时候我们要优化的目标函数就变成了最小化交叉熵： 为了让等式中每个项都是可以计算的，目标函数可以进一步重写为KL-divergence和熵，细节推导见(Sohl-Dickstein et al., 2015): 分开看变分下界损失的每一项： $L$中每一个KL项（除了$L_{0}$），都比较了两个高斯分布之间的距离，可以求解。$L_{T}$是常量，因此可以被忽略不计，因为$q$没有可学习的参数，而$x_{T}$是高斯噪声。Ho et al. 2020 使用离散的解码器从 中建模$L_{0}$。
+参数化$L_{t}$作为训练损失 这个解释比较清楚： 分布$p_{\theta}(x_{t-1}|x_{t})$是一个高斯分布，其均值和标准差由diffusion模型网络预测产生。而分布$q(x_{t-1}|x_{t},x_{0})$可以根据贝叶斯定律得到也是一个高斯分布，即： 这里面的均值和方差分别为： 最小化这个损失项就是拉近q和p这俩分布的距离。只需要定义一个网络$\mu_{\theta}(x_{t},t)$ ,使用L2约束其预测值同$\tilde \mu_{t}(x_{t},x_{0})$一致即可。这里面假设方差一样的，就不用计算了，降低了计算的难度。因为： $\mu_{\theta}(x_{t},t)$在给定$x_{t}$的情况下，需要预测出，为了进一步降低学习难度，可直接定义： 这样可以继续简化$L_{t}$: 上面这个公式表示在优化的时候，采样和$z_{t}\in \mathcal{N}(0,I)$后计算，然后联合时间$t$，送入$z_{\theta}$，约束其与$z_{t}$一致。</div><div class="post-footer">
+        <a href="/posts/ddpm_%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/tricks-for-deep-learning/">Tricks for deep learning</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vecchio</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-02">2023-01-02</time></span>&nbsp;<span class="post-category">included in <a href="/categories/deep-learning/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Deep Learning</a></span></div><div class="content">DL 调参技巧 不管什么模型，先在一个较小的训练集上train和test，看看它能不能过拟合。如果不能过拟合，可能是学习率太大，或者代码写错了。先调小学习率试一下，如果还不行就去检查代码，先看dataloader输出的数据对不对，再看模型每一步的size是否符合自己期待。
 看train/eval的loss曲线，正常的情况应该是train loss呈log状一直下降最后趋于稳定，eval loss开始时一直下降到某一个epoch之后开始趋于稳定或开始上升，这时候可以用early stopping保存eval loss最低的那个模型。如果loss曲线非常不正常，很有可能是数据处理出了问题，比如label对应错了，回去检查代码。

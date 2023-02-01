@@ -3,9 +3,33 @@
         <title>Vecchio Blog</title>
         <link>https://vecchioid.github.io/</link>
         <description>Vecchio Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 13 Jan 2023 19:55:23 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 01 Feb 2023 22:16:10 &#43;0800</lastBuildDate>
             <atom:link href="https://vecchioid.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>OpenMMLab_tutorials</title>
+    <link>https://vecchioid.github.io/posts/openmmlab_tutorials/</link>
+    <pubDate>Wed, 01 Feb 2023 22:16:10 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://vecchioid.github.io/posts/openmmlab_tutorials/</guid>
+    <description><![CDATA[Introduction OpenMMLab号称是深度学习时代最完整的计算机视觉开源算法体系，其提供了统一先进的底层机构，覆盖计算机视觉众多方向，并提供最经典最前沿的算法支持，并提供了统一的基准和开箱即用的工作，是AI从业人员或科研人员利器。
+OpenMMLab开源历程如图所示： 总体架构概览，算法框架包含如图所示， 算法训练-部署一体化 ]]></description>
+</item>
+<item>
+    <title>Tuning_playbook</title>
+    <link>https://vecchioid.github.io/posts/tuning_playbook/</link>
+    <pubDate>Sat, 28 Jan 2023 18:53:19 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://vecchioid.github.io/posts/tuning_playbook/</guid>
+    <description><![CDATA[本文是汉化版本
+文档适合什么样的人 这篇文档适用于对优化深度学习模型感兴趣的工程师和研究人员。假定阅读者已经初步具备了机器学习和深度学习相关的基本知识。
+这篇文档的重点在于超参数的调整过程。涉及了一些深度学习训练相关的知识，如pipeline implementation and optimization，但是并不会细致的讲解。
+我们假设机器学习问题是一个监督学习问题，或者看起来类似的如自监督问题，也就是说，本文档中的一些规定也可适用于其他类型的问题。
+为什么需要这本调优手册？ 目前，想要深度神经网络在实践中正常运行，需要付出大量的努力和猜想时间。糟糕的是，很少有人去记录使肾虚学习模型获得良好结果的方法。
+Guide for starting a new project many of the decisions we make over the course of tuning can be made once at the beginging of a project and 只有在情况发生变化的时候才需要重新考虑。
+our guidance below makes the following assumptions:
+问题制定、数据清理等基本工作已经完成，花时间在模型架构和训练配置上是有意义的 已经有一个进行训练和评估的基本pipeline，并且可以为各种感兴趣的模型执行训练和预测工作。 选择好适当的测试标准，这些测试标准应该能够尽可能的反映出实际部署环境所要测量的内容。 选择模型结构 Summary： 当开启一个新项目的时候，尽量使用一个已经work的模型。]]></description>
+</item>
+<item>
     <title>Meta Learning Tutorials</title>
     <link>https://vecchioid.github.io/posts/meta-learning-tutorials/</link>
     <pubDate>Fri, 13 Jan 2023 19:55:23 &#43;0800</pubDate>

@@ -95,6 +95,22 @@
         alt="/lib/images/avatar.png"
         title="/lib/images/avatar.png" /></a></div><h1 class="home-title">Vecchio's Blog</h1><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com/VecchioID" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/openmmlab_tutorials/">OpenMMLab_tutorials</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-02-01">2023-02-01</time></span></div><div class="content">Introduction OpenMMLab号称是深度学习时代最完整的计算机视觉开源算法体系，其提供了统一先进的底层机构，覆盖计算机视觉众多方向，并提供最经典最前沿的算法支持，并提供了统一的基准和开箱即用的工作，是AI从业人员或科研人员利器。
+OpenMMLab开源历程如图所示： 总体架构概览，算法框架包含如图所示， 算法训练-部署一体化 </div><div class="post-footer">
+        <a href="/posts/openmmlab_tutorials/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/tuning_playbook/">Tuning_playbook</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-28">2023-01-28</time></span></div><div class="content">本文是汉化版本
+文档适合什么样的人 这篇文档适用于对优化深度学习模型感兴趣的工程师和研究人员。假定阅读者已经初步具备了机器学习和深度学习相关的基本知识。
+这篇文档的重点在于超参数的调整过程。涉及了一些深度学习训练相关的知识，如pipeline implementation and optimization，但是并不会细致的讲解。
+我们假设机器学习问题是一个监督学习问题，或者看起来类似的如自监督问题，也就是说，本文档中的一些规定也可适用于其他类型的问题。
+为什么需要这本调优手册？ 目前，想要深度神经网络在实践中正常运行，需要付出大量的努力和猜想时间。糟糕的是，很少有人去记录使肾虚学习模型获得良好结果的方法。
+Guide for starting a new project many of the decisions we make over the course of tuning can be made once at the beginging of a project and 只有在情况发生变化的时候才需要重新考虑。
+our guidance below makes the following assumptions:
+问题制定、数据清理等基本工作已经完成，花时间在模型架构和训练配置上是有意义的 已经有一个进行训练和评估的基本pipeline，并且可以为各种感兴趣的模型执行训练和预测工作。 选择好适当的测试标准，这些测试标准应该能够尽可能的反映出实际部署环境所要测量的内容。 选择模型结构 Summary： 当开启一个新项目的时候，尽量使用一个已经work的模型。</div><div class="post-footer">
+        <a href="/posts/tuning_playbook/">Read More</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/meta-learning-tutorials/">Meta Learning Tutorials</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vecchio</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-13">2023-01-13</time></span>&nbsp;<span class="post-category">included in <a href="/categories/meta-learning/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>meta-learning</a></span></div><div class="content">Meta Learning Tutorials Learning how to learn is dubbed as meta learning.
 meta-learning 问题定义 在本文中,我们主要关注监督学习中的元学习任务，比如图像分类。
@@ -137,32 +153,6 @@ enroll mok;continue;yes;input passwd;reboot;
 2.1 visit the web to obey the instructions provided by nvidia: https://developer.</div><div class="post-footer">
         <a href="/posts/instructions-for-install-nvidia-drivers-cuda-and-cudnn/">Read More</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/nvidia/">Nvidia</a>,&nbsp;<a href="/tags/cuda/">Cuda</a>,&nbsp;<a href="/tags/cudnn/">Cudnn</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/">服务器安装jupyter Notebook流程</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vecchio</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-02">2023-01-02</time></span></div><div class="content">一、ubuntu 下安装jupyter notebook 1、使用conda安装
-conda install jupyter notebook 2、使用pip安装
-pip install jupyter notebook 二、Jupyter notebook配置 1、生成配置文件
-jupyter notebook --generate-config 2、创建密码
-使用python中的 passwd() 创建密码，终端输入 ipython 打开 ipython 并输入：
-In [1]: from notebook.auth import passwd In [2]: passwd() Enter password: ****** Verify password: ****** Out [2]: 'sha1:...' 复制Out [2] 显示的密码（&lsquo;sha1:&hellip;&rsquo; 包括引号）。也可能不是sha开头的。
-3、修改jupyter notebook的配置文件
-打开配置文件
-vim ~/.jupyter/jupyter_notebook_config.py 在该文件中做如下修改或直接在文件尾端添加：
-c.NotebookApp.allow_remote_access = True #允许远程连接 c.NotebookApp.ip='*' # 设置所有ip皆可访问 c.NotebookApp.password = u'sha:..' #之前复制的密码,或者输入的字符 c.NotebookApp.notebook_dir = '/usr/local/spark/mycode/Covid-19-Analysis' # 启动的默认目录 c.</div><div class="post-footer">
-        <a href="/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/">Read More</a></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/ddpm_%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/">DDPM-公式推导</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vecchio</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-02">2023-01-02</time></span></div><div class="content">一、前向扩散过程 从真实数据中采样一个点：，接下来我们定义一个前向的扩散过程，在这个扩散过程中我们逐步向图像中添加高斯噪声，在$T$步之后产生一个各向同性的高斯分布。在这个过程中会产生一些列的噪声样本，分别为。步长的大小通过一个方差表控制：${\beta_t \in (0, 1)}_{t=1}^T$。
-在扩散的过程中，样本$x_0$逐渐丧失了自己的特征并且随着时间的变化。$T \to \infty$，$x _{T}$会变成各向同性的高斯分布。
-使用重参数技巧，我们可以的得到任意时间点的样本$x_{t}$，令$\alpha_t = 1 - \beta_t$， ：
-二、逆向扩散过程 如果我们能反转上述过程并从$q(\mathbf{x}_{t-1} \vert \mathbf{x}_t)$中进行采样，我们就能从一个标准的高斯分布中$\mathbf{x}_T \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$恢复真实的样本。
-如果$\beta_{t}$足够小，$ q(\mathbf{x}_{t-1} \vert \mathbf{x}_t)$也是一个高斯分布。
-但是是不可解的，因此我们需要学习一个模型$p_{\theta}$来近似这个反向的扩散过程。
-2.1 近似逼近 是什么样的分布？ Feller等人在1949年证明连续扩散过程的逆转具有与正向过程相同的分布形式。 当扩散率$\beta_{t}$足够小的时候，扩散次数足够多时，离散扩散过程接近于连续扩散过程，的分布形式和一致，都是高斯分布。但是很难写出的分布参数，所以要用 $p_{\theta}(x_{t-1}|x_{t})$ 来近似 。 其中$ \mu_{\theta}$和 都是要学习的函数，接受$ x_{t} $和 $t$ 作为参数。
-连续迭代多次后，可以还原得到真实的数据分布$p_{\theta}(x_{0})$为： $$p_{\theta}(x_{0}) = \int p_{\theta}(x_{0:T})dx_{1:T}$$ 其中： 以上是近似分布$p_{\theta}(x_{t-1}|x_{t})$的分析过程，
-这个形式和VAE很像，因此我们可以用变分下界去优化 负的对数似然函数： 这个我比较熟悉，通过Jensen不等式也能直观的得到以上结果，这时候我们要优化的目标函数就变成了最小化交叉熵： 为了让等式中每个项都是可以计算的，目标函数可以进一步重写为KL-divergence和熵，细节推导见(Sohl-Dickstein et al., 2015): 分开看变分下界损失的每一项： $L$中每一个KL项（除了$L_{0}$），都比较了两个高斯分布之间的距离，可以求解。$L_{T}$是常量，因此可以被忽略不计，因为$q$没有可学习的参数，而$x_{T}$是高斯噪声。Ho et al. 2020 使用离散的解码器从 中建模$L_{0}$。
-参数化$L_{t}$作为训练损失 这个解释比较清楚： 分布$p_{\theta}(x_{t-1}|x_{t})$是一个高斯分布，其均值和标准差由diffusion模型网络预测产生。而分布$q(x_{t-1}|x_{t},x_{0})$可以根据贝叶斯定律得到也是一个高斯分布，即： 这里面的均值和方差分别为： 最小化这个损失项就是拉近q和p这俩分布的距离。只需要定义一个网络$\mu_{\theta}(x_{t},t)$ ,使用L2约束其预测值同$\tilde \mu_{t}(x_{t},x_{0})$一致即可。这里面假设方差一样的，就不用计算了，降低了计算的难度。因为： $\mu_{\theta}(x_{t},t)$在给定$x_{t}$的情况下，需要预测出，为了进一步降低学习难度，可直接定义： 这样可以继续简化$L_{t}$: 上面这个公式表示在优化的时候，采样和$z_{t}\in \mathcal{N}(0,I)$后计算，然后联合时间$t$，送入$z_{\theta}$，约束其与$z_{t}$一致。</div><div class="post-footer">
-        <a href="/posts/ddpm_%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/">Read More</a></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/">1</a>

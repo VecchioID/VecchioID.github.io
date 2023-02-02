@@ -2,15 +2,18 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://vecchioid.github.io/tags/openmmlab/</loc><lastmod>2023-02-01T22:16:10&#43;08:00</lastmod></url><url>
             <loc>https://vecchioid.github.io/posts/openmmlab_tutorials/</loc><lastmod>2023-02-01T22:16:10&#43;08:00</lastmod></url><url>
             <loc>https://vecchioid.github.io/posts/</loc><lastmod>2023-02-01T22:16:10&#43;08:00</lastmod></url><url>
+            <loc>https://vecchioid.github.io/tags/</loc><lastmod>2023-02-01T22:16:10&#43;08:00</lastmod></url><url>
             <loc>https://vecchioid.github.io/</loc><lastmod>2023-02-01T22:16:10&#43;08:00</lastmod></url><url>
+            <loc>https://vecchioid.github.io/tags/continual_learning/</loc><lastmod>2023-02-01T15:05:02&#43;08:00</lastmod></url><url>
+            <loc>https://vecchioid.github.io/posts/continual_learning/</loc><lastmod>2023-02-01T15:05:02&#43;08:00</lastmod></url><url>
             <loc>https://vecchioid.github.io/posts/tuning_playbook/</loc><lastmod>2023-01-28T18:53:19&#43;08:00</lastmod></url><url>
             <loc>https://vecchioid.github.io/categories/</loc><lastmod>2023-01-13T19:55:23&#43;08:00</lastmod></url><url>
             <loc>https://vecchioid.github.io/posts/meta-learning-tutorials/</loc><lastmod>2023-01-13T19:55:23&#43;08:00</lastmod></url><url>
             <loc>https://vecchioid.github.io/tags/meta-learning/</loc><lastmod>2023-01-13T19:55:23&#43;08:00</lastmod></url><url>
             <loc>https://vecchioid.github.io/categories/meta-learning/</loc><lastmod>2023-01-13T19:55:23&#43;08:00</lastmod></url><url>
-            <loc>https://vecchioid.github.io/tags/</loc><lastmod>2023-01-13T19:55:23&#43;08:00</lastmod></url><url>
             <loc>https://vecchioid.github.io/tags/git/</loc><lastmod>2023-01-10T15:22:00&#43;08:00</lastmod></url><url>
             <loc>https://vecchioid.github.io/posts/git-tutorials/</loc><lastmod>2023-01-10T15:22:00&#43;08:00</lastmod></url><url>
             <loc>https://vecchioid.github.io/tags/deep-learning/</loc><lastmod>2023-01-10T14:52:03&#43;08:00</lastmod></url><url>

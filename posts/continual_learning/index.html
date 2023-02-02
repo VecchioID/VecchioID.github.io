@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Continual_learning - Vecchio Blog</title><meta name="Description" content="Vecchio Blog"><meta property="og:title" content="Continual_learning" />
+<meta property="og:description" content="Continual Learning Tutorials Part fromDeepMind Part fromGoogle Research
+Enabling Continual Learning in Neural Networks Computer programs that learn to perform tasks quickly forget them. We show that learning rules can be modified so that program can remember old one when learning new one. These programs are able to learn progressively and adaptively and this is an important step towards more general artificial intelligence.
+Deep neural networks are the most successful techniques in machine learning for solving a variety of tasks including language translation, image classification and image generation." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vecchioid.github.io/posts/continual_learning/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-01T15:05:02+08:00" />
+<meta property="article:modified_time" content="2023-02-01T15:05:02+08:00" /><meta property="og:site_name" content="Vecchio Blog" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Continual_learning"/>
+<meta name="twitter:description" content="Continual Learning Tutorials Part fromDeepMind Part fromGoogle Research
+Enabling Continual Learning in Neural Networks Computer programs that learn to perform tasks quickly forget them. We show that learning rules can be modified so that program can remember old one when learning new one. These programs are able to learn progressively and adaptively and this is an important step towards more general artificial intelligence.
+Deep neural networks are the most successful techniques in machine learning for solving a variety of tasks including language translation, image classification and image generation."/>
+<meta name="application-name" content="Vecchio Blog">
+<meta name="apple-mobile-web-app-title" content="Vecchio Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://vecchioid.github.io/posts/continual_learning/" /><link rel="prev" href="https://vecchioid.github.io/posts/tuning_playbook/" /><link rel="next" href="https://vecchioid.github.io/posts/openmmlab_tutorials/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Continual_learning",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/vecchioid.github.io\/posts\/continual_learning\/"
+        },"genre": "posts","keywords": "Continual_learning","wordcount":  607 ,
+        "url": "https:\/\/vecchioid.github.io\/posts\/continual_learning\/","datePublished": "2023-02-01T15:05:02+08:00","dateModified": "2023-02-01T15:05:02+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Vecchio"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Vecchio Blog">Vecchio</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Blogs </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/lib/mycv/"> My CV </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Vecchio Blog">Vecchio</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Blogs</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/lib/mycv/" title="">My CV</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Continual_learning</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vecchio</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-01">2023-02-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;607 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#enabling-continual-learning-in-neural-networks">Enabling Continual Learning in Neural Networks</a></li>
+        <li><a href="#learning-to-prompt-for-continual-learning">Learning to prompt for Continual learning</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="continual-learning-tutorials">Continual Learning Tutorials</h1>
+<p>Part from<a href="https://www.deepmind.com/blog/enabling-continual-learning-in-neural-networks" target="_blank" rel="noopener noreffer ">DeepMind</a>
+Part from<a href="https://ai.googleblog.com/2022/04/learning-to-prompt-for-continual.html" target="_blank" rel="noopener noreffer ">Google Research</a></p>
+<h3 id="enabling-continual-learning-in-neural-networks">Enabling Continual Learning in Neural Networks</h3>
+<p>Computer programs that learn to perform tasks quickly forget them. We show that learning rules can be modified so that program can remember old one when learning new one. These programs are able to learn progressively and adaptively and this is an important step towards more general artificial intelligence.</p>
+<p>Deep neural networks are the most successful techniques in machine learning for solving a variety of tasks including language translation, image classification and image generation. However, they are typically designed to learn multiple tasks only when the data is presented all at once. When a network is trained on a specific task, its parameters are adjusted to solve that task. When a new task is introduced, new adaptations will overwrite the knowledge that the neural network has acquired previously. This phenomenon is known as &ldquo;catastrophic forgetting&rdquo; in cognitive science and is considered to be one of the fundamental limitations of neural networks.</p>
+<p>我们在最近的PNAS论文中提出了一种克服神经网络中灾难性遗忘的方法，作为该论文的出发点，我们从基于神经科学的关于哺乳动物和人类大脑中先前获得的技能和记忆的巩固的理论中得到了启发。
+By contrast, our brain works in a different way. We are able to learn incrementally, acquiring skills one at a time and applying our previous knowledge when learning new tasks. As a starting point for deepmind&rsquo;s recent <a href="https://www.pnas.org/doi/abs/10.1073/pnas.1611835114" target="_blank" rel="noopener noreffer ">PNAS paper</a>, in which we propose an approach to overcome catastrophic forgetting in neural networks, we took inspiration from neuroscience-based theories about the consolidation of previously acquired skills and memories in mammalian and human brains.</p>
+<p>神经科学家们将大脑中发生的巩固分为两种：系统巩固和突触巩固。系统巩固是一个过程，通过这个过程，我们大脑的快速学习部分获得的记忆被印记到慢速学习的部分。众所周知，这种印记是由有意识和无意识的回忆介导的&ndash;例如，这可能发生在做梦时。在第二个机制中，突触巩固，如果神经元之间的连接在以前学习的任务中很重要，那么这些连接就不太可能被改写。我们的算法专门从这一机制中获得灵感，以解决灾难性遗忘的问题。
+Neuroscientists have distinguished two kinds of consolidation that occur in the brain: systems consolidation and synaptic consolidation. Systems consolidation is the process by which memories that have been acquired by the quick-learning parts of our brain are imprinted into the slow-learning parts. This imprinting is known to be mediated by conscious and unconscious recall - for instance, this can happen during dreaming. In the second mechanism, synaptic consolidation, connections between neurons are less likely to be overwritten if they have been important in previously learnt tasks. Our algorithm specifically takes inspiration from this mechanism to address the problem of catastrophic forgetting.</p>
+<p>一个神经网络由多个连接组成，与大脑的方式基本相同。在学习一个任务后，我们计算每个连接对该任务的重要性。当我们学习一个新的任务时，每个连接都被保护起来，不被修改，修改量与它对旧任务的重要性成正比。因此，我们有可能在不覆盖前一个任务所学内容的情况下学习新的任务，并且不产生重大的计算成本。用数学术语来说，我们可以认为我们对新任务中的每个连接的保护是通过一个弹簧与旧的保护值相联系的，其硬度与连接的重要性成正比。出于这个原因，我们把我们的算法称为弹性重量合并（EWC）。
+A neural network consists of several connections in much the same way as a brain. After learning a task, we compute how important each connection is to that task. When we learn a new task, each connection is protected from modification by an amount proportional to its importance to the old tasks. Thus it is possible to learn the new task without overwriting what has been learnt in the previous task and without incurring a significant computational cost. In mathematical terms, we can think of the protection we attach to each connection in a new task as being linked to the old protection value by a spring, whose stiffness is proportional to the connection’s importance. For this reason, they called our algorithm Elastic Weight Consolidation (EWC).</p>
+<h3 id="learning-to-prompt-for-continual-learning">Learning to prompt for Continual learning</h3>
+<p><em>Posted by Zifeng Wang, Student Researcher, and Zizhao Zhang, Software Engineer, Google Research</em></p>
+<p>监督学习是机器学习（ML）的一种常见方法，在这种方法中，模型是使用为手头的任务适当标记的数据进行训练。普通的监督学习在独立和相同分布（IID）的数据上进行训练，其中所有的训练例子都是从一组固定的类别中抽样出来的，并且模型在整个训练阶段都能接触到这些例子。相比之下，持续学习解决了在不断变化的数据分布上训练单一模型的问题，其中不同的分类任务是按顺序呈现的。这一点特别重要，例如，在现实世界的场景中，使自主代理人能够处理和解释连续的信息流。</p>
+<p>Supervised learning is a common approach to machine learning in which the model is trained using data that is labeled appropriately for the task at hand. Ordinary supervised learning is trained on data that is IID. (independent and identically distributed), where all training examples are sampled from a fixed set of categories, and the model is exposed to these examples throughout the training phase. In contrast, continual learning addresses the problem of training a single model on a changing data distribution, where different classification tasks are presented sequentially. This is particularly important, for example, in real-world scenarios where autonomous agents need to be able to handle and interpret continuous streams of information.</p>
+<p>为了说明监督学习和持续学习之间的区别，考虑两个任务：（1）对猫和狗进行分类；（2）对熊猫和考拉进行分类。在使用IID的监督学习中，模型被赋予来自两个任务的训练数据，并将其作为一个单一的4类分类问题。然而，在持续学习中，这两个任务是依次到达的，而模型只能获得当前任务的训练数据。因此，这样的模型往往会在以前的任务中出现性能下降，这种现象被称为灾难性遗忘。</p>
+<p>主流的解决方案试图解决灾难性遗忘的问题，在 &ldquo;排练缓冲区 &ldquo;中缓冲过去的数据，并将其与当前的数据混合起来训练模型。然而，这些解决方案的性能在很大程度上取决于缓冲区的大小，在某些情况下，由于数据隐私问题，可能根本不可能实现。另一个工作分支设计特定任务的组件，以避免任务之间的干扰。但这些方法往往假设测试时的任务是已知的，这并不总是真实的，而且它们需要大量的参数。这些方法的局限性提出了持续学习的关键问题：（1）是否有可能有一个更有效、更紧凑的记忆系统，超越缓冲过去的数据？(2) 在不知道其任务身份的情况下，能否为任意的样本自动选择相关的知识成分？</p>
+<p>在CVPR2022上发表的 &ldquo;<a href="https://arxiv.org/abs/2112.08654" target="_blank" rel="noopener noreffer ">学会提示持续学习</a>&ldquo;中，我们试图回答这些问题。从自然语言处理的提示技术中获得灵感，我们提出了一个新的持续学习框架，称为学习提示（L2P）。我们没有为每个序列任务不断地重新学习所有的模型权重，而是提供可学习的任务相关的 &ldquo;指令&rdquo;（即提示），通过可学习的提示参数池来指导预训练的骨干模型进行序列训练。L2P适用于各种具有挑战性的持续学习环境，并在所有基准上持续优于以前的最先进方法。它与基于排练的方法相比，取得了有竞争力的结果，同时也更具有内存效率。最重要的是，L2P是第一个在持续学习领域引入提示概念的方法。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-02-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/continual_learning/">Continual_learning</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/tuning_playbook/" class="prev" rel="prev" title="Tuning_playbook"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Tuning_playbook</a>
+            <a href="/posts/openmmlab_tutorials/" class="next" rel="next" title="OpenMMLab_tutorials">OpenMMLab_tutorials<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Keep Study, Stay Awesome!</div><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2021 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"","algoliaIndex":"","algoliaSearchKey":"","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

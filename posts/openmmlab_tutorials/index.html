@@ -6,7 +6,10 @@
         <meta name="robots" content="noodp" />
         <title>OpenMMLab_tutorials - Vecchio Blog</title><meta name="Description" content="Vecchio Blog"><meta property="og:title" content="OpenMMLab_tutorials" />
 <meta property="og:description" content="Introduction OpenMMLab号称是深度学习时代最完整的计算机视觉开源算法体系，其提供了统一先进的底层机构，覆盖计算机视觉众多方向，并提供最经典最前沿的算法支持，并提供了统一的基准和开箱即用的工作，是AI从业人员或科研人员利器。
-OpenMMLab开源历程如图所示： 总体架构概览，算法框架包含如图所示， 算法训练-部署一体化 " />
+OpenMMLab开源历程如图所示：
+如上图所示，OpenMMLab的训练框架为PyTorch,其基础库为MMCV和MMEngine,在具体的上层算法框架里面则包含众多计算机视觉方向，如image classification, object detection, object detection3D 和姿态估计以及光流估计等等，拥有超过30&#43;的视觉算法库，称得上是计算机视觉的百宝箱。
+总体架构概览，算法框架包含如图所示，
+算法训练-部署一体化" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://vecchioid.github.io/posts/openmmlab_tutorials/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-01T22:16:10+08:00" />
@@ -15,11 +18,14 @@ OpenMMLab开源历程如图所示： 总体架构概览，算法框架包含如�
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="OpenMMLab_tutorials"/>
 <meta name="twitter:description" content="Introduction OpenMMLab号称是深度学习时代最完整的计算机视觉开源算法体系，其提供了统一先进的底层机构，覆盖计算机视觉众多方向，并提供最经典最前沿的算法支持，并提供了统一的基准和开箱即用的工作，是AI从业人员或科研人员利器。
-OpenMMLab开源历程如图所示： 总体架构概览，算法框架包含如图所示， 算法训练-部署一体化 "/>
+OpenMMLab开源历程如图所示：
+如上图所示，OpenMMLab的训练框架为PyTorch,其基础库为MMCV和MMEngine,在具体的上层算法框架里面则包含众多计算机视觉方向，如image classification, object detection, object detection3D 和姿态估计以及光流估计等等，拥有超过30&#43;的视觉算法库，称得上是计算机视觉的百宝箱。
+总体架构概览，算法框架包含如图所示，
+算法训练-部署一体化"/>
 <meta name="application-name" content="Vecchio Blog">
 <meta name="apple-mobile-web-app-title" content="Vecchio Blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://vecchioid.github.io/posts/openmmlab_tutorials/" /><link rel="prev" href="https://vecchioid.github.io/posts/tuning_playbook/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://vecchioid.github.io/posts/openmmlab_tutorials/" /><link rel="prev" href="https://vecchioid.github.io/posts/continual_learning/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -30,12 +36,12 @@ OpenMMLab开源历程如图所示： 总体架构概览，算法框架包含如�
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/vecchioid.github.io\/posts\/openmmlab_tutorials\/"
-        },"genre": "posts","wordcount":  5 ,
+        },"genre": "posts","keywords": "OpenMMLab","wordcount":  12 ,
         "url": "https:\/\/vecchioid.github.io\/posts\/openmmlab_tutorials\/","datePublished": "2023-02-01T22:16:10+08:00","dateModified": "2023-02-01T22:16:10+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
-                "name": "Author"
+                "name": "Vecchio"
             },"description": ""
     }
     </script></head>
@@ -103,8 +109,8 @@ OpenMMLab开源历程如图所示： 总体架构概览，算法框架包含如�
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">OpenMMLab_tutorials</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-01">2023-02-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;5 words&nbsp;
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vecchio</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-02-01">2023-02-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;12 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -114,8 +120,8 @@ OpenMMLab开源历程如图所示： 总体架构概览，算法框架包含如�
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
             </div><div class="content" id="content"><h1 id="introduction">Introduction</h1>
 <p>OpenMMLab号称是深度学习时代最完整的计算机视觉开源算法体系，其提供了统一先进的底层机构，覆盖计算机视觉众多方向，并提供最经典最前沿的算法支持，并提供了统一的基准和开箱即用的工作，是AI从业人员或科研人员利器。</p>
-<p>OpenMMLab开源历程如图所示：
-<img
+<p>OpenMMLab开源历程如图所示：</p>
+<p><img
         class="lazyload"
         src="/svg/loading.min.svg"
         data-src="/lib/images/openmmlab/dev_history.png"
@@ -123,8 +129,9 @@ OpenMMLab开源历程如图所示： 总体架构概览，算法框架包含如�
         data-sizes="auto"
         alt="/lib/images/openmmlab/dev_history.png"
         title="开源历程" /></p>
-<p>总体架构概览，算法框架包含如图所示，
-<img
+<p>如上图所示，OpenMMLab的训练框架为PyTorch,其基础库为MMCV和MMEngine,在具体的上层算法框架里面则包含众多计算机视觉方向，如image classification, object detection, object detection3D 和姿态估计以及光流估计等等，拥有超过30+的视觉算法库，称得上是计算机视觉的百宝箱。</p>
+<p>总体架构概览，算法框架包含如图所示，</p>
+<p><img
         class="lazyload"
         src="/svg/loading.min.svg"
         data-src="/lib/images/openmmlab/overview_framework.png"
@@ -132,8 +139,8 @@ OpenMMLab开源历程如图所示： 总体架构概览，算法框架包含如�
         data-sizes="auto"
         alt="/lib/images/openmmlab/overview_framework.png"
         title="/lib/images/openmmlab/overview_framework.png" /></p>
-<p>算法训练-部署一体化
-<img
+<p>算法训练-部署一体化</p>
+<p><img
         class="lazyload"
         src="/svg/loading.min.svg"
         data-src="/lib/images/openmmlab/train_and_deploy.png"
@@ -156,13 +163,13 @@ OpenMMLab开源历程如图所示： 总体架构概览，算法框架包含如�
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/openmmlab/">OpenMMLab</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/tuning_playbook/" class="prev" rel="prev" title="Tuning_playbook"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Tuning_playbook</a></div>
+    <div class="post-nav"><a href="/posts/continual_learning/" class="prev" rel="prev" title="Continual_learning"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Continual_learning</a></div>
 </div>
 </article></div>
             </main><footer class="footer">

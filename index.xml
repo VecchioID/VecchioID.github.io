@@ -9,10 +9,23 @@
     <title>OpenMMLab_tutorials</title>
     <link>https://vecchioid.github.io/posts/openmmlab_tutorials/</link>
     <pubDate>Wed, 01 Feb 2023 22:16:10 &#43;0800</pubDate>
-    <author>Author</author>
+    <author>Vecchio</author>
     <guid>https://vecchioid.github.io/posts/openmmlab_tutorials/</guid>
     <description><![CDATA[Introduction OpenMMLab号称是深度学习时代最完整的计算机视觉开源算法体系，其提供了统一先进的底层机构，覆盖计算机视觉众多方向，并提供最经典最前沿的算法支持，并提供了统一的基准和开箱即用的工作，是AI从业人员或科研人员利器。
-OpenMMLab开源历程如图所示： 总体架构概览，算法框架包含如图所示， 算法训练-部署一体化 ]]></description>
+OpenMMLab开源历程如图所示：
+如上图所示，OpenMMLab的训练框架为PyTorch,其基础库为MMCV和MMEngine,在具体的上层算法框架里面则包含众多计算机视觉方向，如image classification, object detection, object detection3D 和姿态估计以及光流估计等等，拥有超过30+的视觉算法库，称得上是计算机视觉的百宝箱。
+总体架构概览，算法框架包含如图所示，
+算法训练-部署一体化]]></description>
+</item>
+<item>
+    <title>Continual_learning</title>
+    <link>https://vecchioid.github.io/posts/continual_learning/</link>
+    <pubDate>Wed, 01 Feb 2023 15:05:02 &#43;0800</pubDate>
+    <author>Vecchio</author>
+    <guid>https://vecchioid.github.io/posts/continual_learning/</guid>
+    <description><![CDATA[Continual Learning Tutorials Part fromDeepMind Part fromGoogle Research
+Enabling Continual Learning in Neural Networks Computer programs that learn to perform tasks quickly forget them. We show that learning rules can be modified so that program can remember old one when learning new one. These programs are able to learn progressively and adaptively and this is an important step towards more general artificial intelligence.
+Deep neural networks are the most successful techniques in machine learning for solving a variety of tasks including language translation, image classification and image generation.]]></description>
 </item>
 <item>
     <title>Tuning_playbook</title>

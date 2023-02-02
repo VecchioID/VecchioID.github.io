@@ -3,9 +3,37 @@
         <title>Vecchio Blog</title>
         <link>https://vecchioid.github.io/</link>
         <description>Vecchio Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 01 Feb 2023 22:16:10 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 02 Feb 2023 19:38:16 &#43;0800</lastBuildDate>
             <atom:link href="https://vecchioid.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>OpenMMLab_tutorials_2</title>
+    <link>https://vecchioid.github.io/posts/openmmlab_tutorials_2/</link>
+    <pubDate>Thu, 02 Feb 2023 19:38:16 &#43;0800</pubDate>
+    <author>Vecchio</author>
+    <guid>https://vecchioid.github.io/posts/openmmlab_tutorials_2/</guid>
+    <description><![CDATA[Image classification Supervised learning &amp; Development History Start from AlexNet, deep learning ushers in a new era.
+Deep neural networks going deeped in 2012-2014, such as VGG-19 and GoogLeNet-22.
+And then the accuracy degradation problem was encountered. ResNet solved this problem by using residual learning. Residual connectiong make the loss surface more smooth.
+后续resnet也有很多改进工作，如ResNeXt，之后神经网络也可以采用神经结构搜索来实现更好performance网络结构的搜索。
+之后，在视觉发展中迎来了新时代，Vision Transformer，一度占据榜首，之后ConvNeXt问世，暂时证明比ViT好一点。
+视觉模型在ImageNet上的发展历程如下图所示：
+以上都是监督学习的范式，监督学习的范式下图所示：
+Self-supervised learning 近些年，自监督学习也发展的很好，一般的SSL范式如下：]]></description>
+</item>
+<item>
+    <title>Graph_Networks</title>
+    <link>https://vecchioid.github.io/posts/graph_networks/</link>
+    <pubDate>Thu, 02 Feb 2023 10:55:52 &#43;0800</pubDate>
+    <author>Vecchio</author>
+    <guid>https://vecchioid.github.io/posts/graph_networks/</guid>
+    <description><![CDATA[Graph Neural Networks Part from 机器之心
+图网络即可以在社交网络或其它基于图形数据上运行的一般深度学习架构，是一种基于图机构的广义神经网络。图网络一般将底层图形作为计算图，并通过在整张图上传递、转换和聚合节点特征信息，从而学习神经网络基元以生成单节点嵌入向量。生成的节点嵌入向量可作为任何可微分预测层的输入，并用于节点分类或预测节点之间的连接，完整的模型可以通过端到端的方式训练。
+图是一种由节点和边组成的数据结构。图神经网络是一类基于深度学习的处理图信息的方法。
+GNN第一个动机来源于CNN。CNN只能在规则的欧式空间数据上运行，如图像是2维的网格数据，而文本是一维的数据块。如何将CNN应用于图这一非欧式空间数据呢？这就是GNN的出现。也是GNN重点解决的问题。
+GNN的另一个动机来自图嵌入，graph embedding，它学习图中节点、边或子图的低维向量空间表示。DeepWalk、LINE、SDNE 等方法在网络表示学习领域取得了很大的成功。然而，这些方法在计算上较为复杂并且在大规模上的图上并不是最优的，GNN 旨在解决这些问题。
+Development history 描述 ]]></description>
+</item>
+<item>
     <title>OpenMMLab_tutorials</title>
     <link>https://vecchioid.github.io/posts/openmmlab_tutorials/</link>
     <pubDate>Wed, 01 Feb 2023 22:16:10 &#43;0800</pubDate>
@@ -113,51 +141,6 @@ In [1]: from notebook.auth import passwd In [2]: passwd() Enter password: ******
 打开配置文件
 vim ~/.jupyter/jupyter_notebook_config.py 在该文件中做如下修改或直接在文件尾端添加：
 c.NotebookApp.allow_remote_access = True #允许远程连接 c.NotebookApp.ip='*' # 设置所有ip皆可访问 c.NotebookApp.password = u'sha:..' #之前复制的密码,或者输入的字符 c.NotebookApp.notebook_dir = '/usr/local/spark/mycode/Covid-19-Analysis' # 启动的默认目录 c.]]></description>
-</item>
-<item>
-    <title>DDPM-公式推导</title>
-    <link>https://vecchioid.github.io/posts/ddpm_%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/</link>
-    <pubDate>Mon, 02 Jan 2023 12:53:40 &#43;0800</pubDate>
-    <author>Vecchio</author>
-    <guid>https://vecchioid.github.io/posts/ddpm_%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/</guid>
-    <description><![CDATA[一、前向扩散过程 从真实数据中采样一个点：，接下来我们定义一个前向的扩散过程，在这个扩散过程中我们逐步向图像中添加高斯噪声，在$T$步之后产生一个各向同性的高斯分布。在这个过程中会产生一些列的噪声样本，分别为。步长的大小通过一个方差表控制：${\beta_t \in (0, 1)}_{t=1}^T$。
-在扩散的过程中，样本$x_0$逐渐丧失了自己的特征并且随着时间的变化。$T \to \infty$，$x _{T}$会变成各向同性的高斯分布。
-使用重参数技巧，我们可以的得到任意时间点的样本$x_{t}$，令$\alpha_t = 1 - \beta_t$， ：
-二、逆向扩散过程 如果我们能反转上述过程并从$q(\mathbf{x}_{t-1} \vert \mathbf{x}_t)$中进行采样，我们就能从一个标准的高斯分布中$\mathbf{x}_T \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$恢复真实的样本。
-如果$\beta_{t}$足够小，$ q(\mathbf{x}_{t-1} \vert \mathbf{x}_t)$也是一个高斯分布。
-但是是不可解的，因此我们需要学习一个模型$p_{\theta}$来近似这个反向的扩散过程。
-2.1 近似逼近 是什么样的分布？ Feller等人在1949年证明连续扩散过程的逆转具有与正向过程相同的分布形式。 当扩散率$\beta_{t}$足够小的时候，扩散次数足够多时，离散扩散过程接近于连续扩散过程，的分布形式和一致，都是高斯分布。但是很难写出的分布参数，所以要用 $p_{\theta}(x_{t-1}|x_{t})$ 来近似 。 其中$ \mu_{\theta}$和 都是要学习的函数，接受$ x_{t} $和 $t$ 作为参数。
-连续迭代多次后，可以还原得到真实的数据分布$p_{\theta}(x_{0})$为： $$p_{\theta}(x_{0}) = \int p_{\theta}(x_{0:T})dx_{1:T}$$ 其中： 以上是近似分布$p_{\theta}(x_{t-1}|x_{t})$的分析过程，
-这个形式和VAE很像，因此我们可以用变分下界去优化 负的对数似然函数： 这个我比较熟悉，通过Jensen不等式也能直观的得到以上结果，这时候我们要优化的目标函数就变成了最小化交叉熵： 为了让等式中每个项都是可以计算的，目标函数可以进一步重写为KL-divergence和熵，细节推导见(Sohl-Dickstein et al., 2015): 分开看变分下界损失的每一项： $L$中每一个KL项（除了$L_{0}$），都比较了两个高斯分布之间的距离，可以求解。$L_{T}$是常量，因此可以被忽略不计，因为$q$没有可学习的参数，而$x_{T}$是高斯噪声。Ho et al. 2020 使用离散的解码器从 中建模$L_{0}$。
-参数化$L_{t}$作为训练损失 这个解释比较清楚： 分布$p_{\theta}(x_{t-1}|x_{t})$是一个高斯分布，其均值和标准差由diffusion模型网络预测产生。而分布$q(x_{t-1}|x_{t},x_{0})$可以根据贝叶斯定律得到也是一个高斯分布，即： 这里面的均值和方差分别为： 最小化这个损失项就是拉近q和p这俩分布的距离。只需要定义一个网络$\mu_{\theta}(x_{t},t)$ ,使用L2约束其预测值同$\tilde \mu_{t}(x_{t},x_{0})$一致即可。这里面假设方差一样的，就不用计算了，降低了计算的难度。因为： $\mu_{\theta}(x_{t},t)$在给定$x_{t}$的情况下，需要预测出，为了进一步降低学习难度，可直接定义： 这样可以继续简化$L_{t}$: 上面这个公式表示在优化的时候，采样和$z_{t}\in \mathcal{N}(0,I)$后计算，然后联合时间$t$，送入$z_{\theta}$，约束其与$z_{t}$一致。]]></description>
-</item>
-<item>
-    <title>Tricks for deep learning</title>
-    <link>https://vecchioid.github.io/posts/tricks-for-deep-learning/</link>
-    <pubDate>Mon, 02 Jan 2023 12:53:40 &#43;0800</pubDate>
-    <author>Vecchio</author>
-    <guid>https://vecchioid.github.io/posts/tricks-for-deep-learning/</guid>
-    <description><![CDATA[DL 调参技巧 不管什么模型，先在一个较小的训练集上train和test，看看它能不能过拟合。如果不能过拟合，可能是学习率太大，或者代码写错了。先调小学习率试一下，如果还不行就去检查代码，先看dataloader输出的数据对不对，再看模型每一步的size是否符合自己期待。
-看train/eval的loss曲线，正常的情况应该是train loss呈log状一直下降最后趋于稳定，eval loss开始时一直下降到某一个epoch之后开始趋于稳定或开始上升，这时候可以用early stopping保存eval loss最低的那个模型。如果loss曲线非常不正常，很有可能是数据处理出了问题，比如label对应错了，回去检查代码。
-不要一开始就用大数据集，先在一个大概2w训练集，2k测试集的小数据集上调参。
-尽量不要自己从头搭架子（新手和半新手）。找一个已经明确没有bug能跑通的其它任务的架子，在它的基础上修改。否则debug过程非常艰难，因为有时候是版本迭代产生的问题，修改起来很麻烦。
-优化器优先用adam，学习率设1e-3或1e-4，再试Radam（LiyuanLucasLiu/RAdam）。不推荐sgdm，因为很慢。
-lrscheduler用torch.optim.lr_scheduler.CosineAnnealingLR，T_max设32或64，几个任务上试效果都不错。（用这个lr_scheduler加上adam系的optimizer基本就不用怎么调学习率了）
-有一些任务（尤其是有RNN的）要做梯度裁剪，torch.nn.utils.clip_grad_norm。
-参数初始化，lstm的h用orthogonal，其它用he或xavier。
-激活函数用relu一般就够了，也可以试试leaky relu。
-batchnorm和dropout可以试，放的位置很重要。优先尝试放在最后输出层之前，以及embedding层之后。RNN可以试layer_norm。有些任务上加了这些层可能会有负作用。
-metric learning中先试标label的分类方法。然后可以用triplet loss，margin这个参数的设置很重要。
-batchsize设置小一点通常会有一些提升，某些任务batchsize设成1有奇效。
-embedding层的embedsize可以小一些（64 or 128），之后LSTM或CNN的hiddensize要稍微大一些（256 or 512）。（ALBERT论文里面大概也是这个意思）
-模型方面，可以先用2或3层LSTM试一下，通常效果都不错。
-weight decay可以试一下，我一般用1e-4。
-有CNN的地方就用shortcut。CNN层数加到某一个值之后对结果影响就不大了，这个值作为参数可以调一下。
-GRU和LSTM在大部分任务上效果差不多。
-看论文时候不要全信，能复现的尽量复现一下，许多论文都会做低baseline，但实际使用时很多baseline效果很不错。
-对于大多数任务，数据比模型重要。面对新任务时先分析数据，再根据数据设计模型，并决定各个参数。例如nlp有些任务中的padding长度，通常需要达到数据集的90%以上，可用pandas的describe函数进行分析。
-直观的理解，batch size增加，学习率不增加的话每次更为仅为原来的1/k，所以需要增加epoch。对于收敛精度，由于增大了batchsize, 使梯度估计相较于baseline的梯度跟Ghia准确，噪声减少，更容易收敛到local minimal，类似于graient descent的效果。batchsize增大k倍，相当于梯度的方差减少k倍，因此梯度会更加准确。如果要茶匙方差，就要增大lr。之前是batchsize扩大k倍，lr增加sqrt(k)倍以提高训练速度，这也是linear scaling rule之前很多人常用的增大lr的方式。但是实际中，发现直接将lr增大k倍的效果比较好。
-Facebook现在改名叫meta，在Training Imagenet in 1 hour中提出了Linear Scaling Rule，当batchsize变为k倍的时候，learning rate同样需要乘以k就能达到同样的训练结果。看似简单的规律，这篇论文中给出了不完整的莅临解释和坚实的实验证明。]]></description>
 </item>
 </channel>
 </rss>

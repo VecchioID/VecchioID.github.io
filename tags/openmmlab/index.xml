@@ -3,7 +3,22 @@
         <title>OpenMMLab - Tag - Vecchio Blog</title>
         <link>https://vecchioid.github.io/tags/openmmlab/</link>
         <description>OpenMMLab - Tag - Vecchio Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 01 Feb 2023 22:16:10 &#43;0800</lastBuildDate><atom:link href="https://vecchioid.github.io/tags/openmmlab/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 02 Feb 2023 19:38:16 &#43;0800</lastBuildDate><atom:link href="https://vecchioid.github.io/tags/openmmlab/" rel="self" type="application/rss+xml" /><item>
+    <title>OpenMMLab_tutorials_2</title>
+    <link>https://vecchioid.github.io/posts/openmmlab_tutorials_2/</link>
+    <pubDate>Thu, 02 Feb 2023 19:38:16 &#43;0800</pubDate>
+    <author>Vecchio</author>
+    <guid>https://vecchioid.github.io/posts/openmmlab_tutorials_2/</guid>
+    <description><![CDATA[Image classification Supervised learning &amp; Development History Start from AlexNet, deep learning ushers in a new era.
+Deep neural networks going deeped in 2012-2014, such as VGG-19 and GoogLeNet-22.
+And then the accuracy degradation problem was encountered. ResNet solved this problem by using residual learning. Residual connectiong make the loss surface more smooth.
+后续resnet也有很多改进工作，如ResNeXt，之后神经网络也可以采用神经结构搜索来实现更好performance网络结构的搜索。
+之后，在视觉发展中迎来了新时代，Vision Transformer，一度占据榜首，之后ConvNeXt问世，暂时证明比ViT好一点。
+视觉模型在ImageNet上的发展历程如下图所示：
+以上都是监督学习的范式，监督学习的范式下图所示：
+Self-supervised learning 近些年，自监督学习也发展的很好，一般的SSL范式如下：]]></description>
+</item>
+<item>
     <title>OpenMMLab_tutorials</title>
     <link>https://vecchioid.github.io/posts/openmmlab_tutorials/</link>
     <pubDate>Wed, 01 Feb 2023 22:16:10 &#43;0800</pubDate>

@@ -3,20 +3,28 @@
         <title>Categories - Category - Vecchio Blog</title>
         <link>https://vecchioid.github.io/categories/</link>
         <description>Categories - Category - Vecchio Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 13 Jan 2023 19:55:23 &#43;0800</lastBuildDate><atom:link href="https://vecchioid.github.io/categories/" rel="self" type="application/rss+xml" /><item>
-    <title>meta-learning</title>
-    <link>https://vecchioid.github.io/categories/meta-learning/</link>
-    <pubDate>Fri, 13 Jan 2023 19:55:23 &#43;0800</pubDate>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 01 Feb 2023 22:16:10 &#43;0800</lastBuildDate><atom:link href="https://vecchioid.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>Techinique library</title>
+    <link>https://vecchioid.github.io/categories/techinique-library/</link>
+    <pubDate>Wed, 01 Feb 2023 22:16:10 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>https://vecchioid.github.io/categories/meta-learning/</guid>
+    <guid>https://vecchioid.github.io/categories/techinique-library/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Deep Learning</title>
     <link>https://vecchioid.github.io/categories/deep-learning/</link>
-    <pubDate>Mon, 02 Jan 2023 22:12:07 &#43;0800</pubDate>
+    <pubDate>Wed, 01 Feb 2023 15:05:02 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://vecchioid.github.io/categories/deep-learning/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>meta-learning</title>
+    <link>https://vecchioid.github.io/categories/meta-learning/</link>
+    <pubDate>Fri, 13 Jan 2023 19:55:23 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://vecchioid.github.io/categories/meta-learning/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

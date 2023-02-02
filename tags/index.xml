@@ -20,6 +20,14 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
+    <title>tricks for deep learning</title>
+    <link>https://vecchioid.github.io/tags/tricks-for-deep-learning/</link>
+    <pubDate>Sat, 28 Jan 2023 18:53:19 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://vecchioid.github.io/tags/tricks-for-deep-learning/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>meta-learning</title>
     <link>https://vecchioid.github.io/tags/meta-learning/</link>
     <pubDate>Fri, 13 Jan 2023 19:55:23 &#43;0800</pubDate>
@@ -73,14 +81,6 @@
     <pubDate>Mon, 02 Jan 2023 22:12:07 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://vecchioid.github.io/tags/cudnn/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Nvidia</title>
-    <link>https://vecchioid.github.io/tags/nvidia/</link>
-    <pubDate>Mon, 02 Jan 2023 22:12:07 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://vecchioid.github.io/tags/nvidia/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

@@ -105,7 +105,7 @@ enroll mok;continue;yes;input passwd;reboot;
                 <i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/nvidia/">Nvidia</a>,&nbsp;<a href="/tags/cuda/">Cuda</a>,&nbsp;<a href="/tags/cudnn/">Cudnn</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/">服务器安装jupyter Notebook流程</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vecchio</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-02">2023-01-02</time></span></div><div class="content">一、ubuntu 下安装jupyter notebook 1、使用conda安装
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vecchio</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-02">2023-01-02</time></span>&nbsp;<span class="post-category">included in <a href="/categories/techinique-library/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Techinique library</a></span></div><div class="content">一、ubuntu 下安装jupyter notebook 1、使用conda安装
 conda install jupyter notebook 2、使用pip安装
 pip install jupyter notebook 二、Jupyter notebook配置 1、生成配置文件
 jupyter notebook --generate-config 2、创建密码
@@ -118,7 +118,7 @@ c.NotebookApp.allow_remote_access = True #允许远程连接 c.NotebookApp.ip='*
         <a href="/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/">Read More</a></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/ddpm_%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/">DDPM-公式推导</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vecchio</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-02">2023-01-02</time></span></div><div class="content">一、前向扩散过程 从真实数据中采样一个点：，接下来我们定义一个前向的扩散过程，在这个扩散过程中我们逐步向图像中添加高斯噪声，在$T$步之后产生一个各向同性的高斯分布。在这个过程中会产生一些列的噪声样本，分别为。步长的大小通过一个方差表控制：${\beta_t \in (0, 1)}_{t=1}^T$。
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Vecchio</a></span>&nbsp;<span class="post-publish">published on <time datetime="2023-01-02">2023-01-02</time></span>&nbsp;<span class="post-category">included in <a href="/categories/deep-learning/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Deep Learning</a></span></div><div class="content">一、前向扩散过程 从真实数据中采样一个点：，接下来我们定义一个前向的扩散过程，在这个扩散过程中我们逐步向图像中添加高斯噪声，在$T$步之后产生一个各向同性的高斯分布。在这个过程中会产生一些列的噪声样本，分别为。步长的大小通过一个方差表控制：${\beta_t \in (0, 1)}_{t=1}^T$。
 在扩散的过程中，样本$x_0$逐渐丧失了自己的特征并且随着时间的变化。$T \to \infty$，$x _{T}$会变成各向同性的高斯分布。
 使用重参数技巧，我们可以的得到任意时间点的样本$x_{t}$，令$\alpha_t = 1 - \beta_t$， ：
 二、逆向扩散过程 如果我们能反转上述过程并从$q(\mathbf{x}_{t-1} \vert \mathbf{x}_t)$中进行采样，我们就能从一个标准的高斯分布中$\mathbf{x}_T \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$恢复真实的样本。

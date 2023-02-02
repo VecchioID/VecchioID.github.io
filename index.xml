@@ -31,7 +31,7 @@ Deep neural networks are the most successful techniques in machine learning for 
     <title>Tuning_playbook</title>
     <link>https://vecchioid.github.io/posts/tuning_playbook/</link>
     <pubDate>Sat, 28 Jan 2023 18:53:19 &#43;0800</pubDate>
-    <author>Author</author>
+    <author>origin by google, Vecchio secondary creation</author>
     <guid>https://vecchioid.github.io/posts/tuning_playbook/</guid>
     <description><![CDATA[本文是汉化版本
 文档适合什么样的人 这篇文档适用于对优化深度学习模型感兴趣的工程师和研究人员。假定阅读者已经初步具备了机器学习和深度学习相关的基本知识。

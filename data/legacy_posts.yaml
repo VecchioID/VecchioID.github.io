@@ -1,64 +1,64 @@
-- title: "OpenMMLab_tutorials_2"
+- title: "OpenMMLab Tutorials (Part 2)"
   date: "2023-02-02"
   url: "/posts/openmmlab_tutorials_2/"
-  category: "Techinique library"
+  category: "Technique Library"
   tags: ["OpenMMLab"]
-- title: "Graph_Networks"
+- title: "Graph Networks"
   date: "2023-02-02"
   url: "/posts/graph_networks/"
-  category: "Graph_Networks"
-  tags: ["Graph_Networks"]
-- title: "OpenMMLab_tutorials"
+  category: "Graph Networks"
+  tags: ["Graph Networks"]
+- title: "OpenMMLab Tutorials"
   date: "2023-02-01"
   url: "/posts/openmmlab_tutorials/"
-  category: "Techinique library"
+  category: "Technique Library"
   tags: ["OpenMMLab"]
-- title: "Continual_learning"
+- title: "Continual Learning"
   date: "2023-02-01"
   url: "/posts/continual_learning/"
   category: "Deep Learning"
-  tags: ["Continual_learning"]
-- title: "Tuning_playbook"
+  tags: ["Continual Learning"]
+- title: "Tuning Playbook"
   date: "2023-01-28"
   url: "/posts/tuning_playbook/"
   category: "Deep Learning"
-  tags: ["tricks for deep learning"]
+  tags: ["Tricks for Deep Learning"]
 - title: "Meta Learning Tutorials"
   date: "2023-01-13"
   url: "/posts/meta-learning-tutorials/"
-  category: "meta-learning"
-  tags: ["meta-learning"]
+  category: "Meta-Learning"
+  tags: ["Meta-Learning"]
 - title: "Git Tutorials"
   date: "2023-01-10"
   url: "/posts/git-tutorials/"
-  category: "Techinique library"
+  category: "Technique Library"
   tags: ["Git"]
-- title: "Self Supervised Learning"
+- title: "Self-Supervised Learning"
   date: "2023-01-10"
   url: "/posts/self-supervised-learning/"
   category: "Deep Learning"
-  tags: ["machine learning", "deep learning", "self supervised learning"]
-- title: "Instructions for Install Nvidia Drivers Cuda and Cudnn"
+  tags: ["Machine Learning", "Deep Learning", "Self-Supervised Learning"]
+- title: "Installing NVIDIA Drivers, CUDA and cuDNN"
   date: "2023-01-02"
   url: "/posts/instructions-for-install-nvidia-drivers-cuda-and-cudnn/"
   category: "Deep Learning"
-  tags: ["Nvidia", "Cuda", "Cudnn"]
-- title: "服务器安装jupyter Notebook流程"
+  tags: ["NVIDIA", "CUDA", "cuDNN"]
+- title: "服务器安装 Jupyter Notebook 流程"
   date: "2023-01-02"
   url: "/posts/服务器安装jupyter-notebook流程/"
-  category: "Techinique library"
+  category: "Technique Library"
   tags: []
-- title: "DDPM-公式推导"
+- title: "DDPM 公式推导"
   date: "2023-01-02"
   url: "/posts/ddpm_公式推导/"
   category: "Deep Learning"
   tags: []
-- title: "Tricks for deep learning"
+- title: "Tricks for Deep Learning"
   date: "2023-01-02"
   url: "/posts/tricks-for-deep-learning/"
   category: "Deep Learning"
   tags: ["Tricks"]
-- title: "DL调参数技巧"
+- title: "DL 调参技巧"
   date: "2023-01-02"
   url: "/posts/dl调参技巧/"
   category: "Deep Learning"

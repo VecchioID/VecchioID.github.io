@@ -7,7 +7,6 @@
     <div class="hero-actions">
       <a class="button primary" href="/research/">Explore research</a>
       <a class="button" href="/posts/">Read the blog</a>
-      <a class="text-link" href="/cv/">Personal CV →</a>
     </div>
   </div>
   <aside class="hero-side" aria-label="Research focus">
@@ -62,18 +61,16 @@
   </div>
 
   {{ $new := where site.RegularPages "Section" "posts" }}
-  {{ if gt (len $new) 0 }}
-    <div class="subheading"><span>New Markdown posts</span></div>
-    <div class="writing-list">
-      {{ range first 4 ($new.ByDate.Reverse) }}
-        <a class="writing-row" href="{{ .RelPermalink }}"><time>{{ .Date.Format "2006-01-02" }}</time><strong>{{ .Title }}</strong><span>→</span></a>
-      {{ end }}
-    </div>
+  {{ $rows := slice }}
+  {{ range $new }}
+    {{ $rows = $rows | append (dict "date" (.Date.Format "2006-01-02") "title" .Title "url" .RelPermalink) }}
   {{ end }}
-
-  <div class="subheading archive-heading"><span>Legacy archive · preserved at original URLs</span></div>
-  <div class="writing-list">
-    {{ range first 6 hugo.Data.legacy_posts }}
+  {{ range hugo.Data.legacy_posts }}
+    {{ $rows = $rows | append (dict "date" .date "title" .title "url" .url) }}
+  {{ end }}
+  {{ $rows = sort $rows "date" "desc" }}
+  <div class="writing-list elevated-list">
+    {{ range first 10 $rows }}
       <a class="writing-row" href="{{ .url }}"><time>{{ .date }}</time><strong>{{ .title }}</strong><span>→</span></a>
     {{ end }}
   </div>

@@ -39,10 +39,6 @@ description: "Academic research, engineering work, publications, projects, and t
       <p>Doctoral-stage study/research in brain-inspired intelligence.</p>
       <p class="todo">Confirm degree title, school/department, advisor, start/graduation year, and dissertation title before publication.</p>
     </article>
-    <article class="cv-entry">
-      <div class="cv-entry-head"><h3>Northeast Electric Power University (NEEPU)</h3><span>Graduated 2019</span></div>
-      <p>Bachelor's degree. <span class="todo-inline">TODO: exact major and degree title.</span></p>
-    </article>
   </div>
 </section>
 

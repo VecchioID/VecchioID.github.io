@@ -249,14 +249,6 @@ button, input, textarea { font: inherit; }
 .article-summary { max-width: 810px; margin: 25px 0 0; font-size: 1.18rem; line-height: 1.65; color: var(--muted); }
 .article-tags { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 60px; padding-top: 23px; border-top: 1px solid var(--line); color: var(--muted); }
 
-/*
-   Future Markdown blog typography
-   --------------------------------
-   Latin letters and numbers: Times New Roman when available.
-   Chinese: browser falls back to Songti SC / STSong / SimSun / 宋体.
-   Body text uses a fixed 19pt line box as requested.
-   Code and math are intentionally excluded.
-*/
 .article-body {
   font-family: "Times New Roman", Times, "Songti SC", STSong, SimSun, "宋体", "Noto Serif CJK SC", serif;
   font-size: var(--article-font-size);

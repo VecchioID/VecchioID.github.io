@@ -1,19 +1,11 @@
-# One-time deployment checklist
+# Deployment checklist
 
-- [ ] Work inside the existing `VecchioID.github.io` clone (keep `.git`).
-- [ ] Commit/push any old uncommitted changes first.
-- [ ] Delete the old working-tree files, but **do not delete `.git`**.
-- [ ] Copy all files from this package into the repository root.
-- [ ] Run `./scripts/preflight.sh`.
-- [ ] `git add -A`
-- [ ] `git commit -m "Rebuild personal site with Hugo and GitHub Pages Actions"`
-- [ ] `git push origin main`
-- [ ] GitHub repository → Settings → Pages → Source: **GitHub Actions**.
-- [ ] Open the Actions tab and confirm `Deploy GitHub Pages` is green.
-- [ ] Verify `/`, `/posts/`, `/cv/`, and one legacy article such as `/posts/continual_learning/`.
-- [ ] Edit `content/cv/_index.md` and resolve the remaining `TODO` items.
-
-## Do not do this
-
-Do not upload the ZIP as a single file into the repository. Extract/copy its contents.
-Do not initialize a brand-new repository if you want automatic recovery of the old Blog bodies.
+1. Run the top-level one-click installer against the existing cloned repository.
+2. Confirm installer output says `all 13 legacy posts verified`.
+3. Run `git status` and review the replacement.
+4. Commit and push to `main`.
+5. In GitHub: Settings -> Pages -> Source -> GitHub Actions.
+6. In Actions, the build must pass `Preflight source tree` and `Verify complete site`.
+7. Open `/posts/` and check both the new Markdown section and Legacy archive.
+8. Open at least `Graph_Networks` and `OpenMMLab_tutorials_2` to confirm the two newest legacy pages work.
+9. Open `/cv/`, `/research/`, and `/projects/`.

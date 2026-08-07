@@ -1,18 +1,15 @@
 baseURL = 'https://vecchioid.github.io/'
-languageCode = 'en-us'
+languageCode = 'zh-cn'
 title = 'Kai Zhao | Vecchio'
 enableRobotsTXT = true
-summaryLength = 32
+summaryLength = 38
+disableKinds = ['taxonomy', 'term']
 
 [pagination]
   pagerSize = 10
 
 [permalinks]
   posts = '/posts/:slug/'
-
-[taxonomies]
-  tag = 'tags'
-  category = 'categories'
 
 [markup]
   [markup.goldmark]

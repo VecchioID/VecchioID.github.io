@@ -1,0 +1,87 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - Tag - Vecchio Blog</title>
+        <link>https://vecchioid.github.io/tags/</link>
+        <description>Tags - Tag - Vecchio Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 02 Feb 2023 19:38:16 &#43;0800</lastBuildDate><atom:link href="https://vecchioid.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>OpenMMLab</title>
+    <link>https://vecchioid.github.io/tags/openmmlab/</link>
+    <pubDate>Thu, 02 Feb 2023 19:38:16 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://vecchioid.github.io/tags/openmmlab/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Graph_Networks</title>
+    <link>https://vecchioid.github.io/tags/graph_networks/</link>
+    <pubDate>Thu, 02 Feb 2023 10:55:52 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://vecchioid.github.io/tags/graph_networks/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Continual_learning</title>
+    <link>https://vecchioid.github.io/tags/continual_learning/</link>
+    <pubDate>Wed, 01 Feb 2023 15:05:02 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://vecchioid.github.io/tags/continual_learning/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>tricks for deep learning</title>
+    <link>https://vecchioid.github.io/tags/tricks-for-deep-learning/</link>
+    <pubDate>Sat, 28 Jan 2023 18:53:19 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://vecchioid.github.io/tags/tricks-for-deep-learning/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>meta-learning</title>
+    <link>https://vecchioid.github.io/tags/meta-learning/</link>
+    <pubDate>Fri, 13 Jan 2023 19:55:23 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://vecchioid.github.io/tags/meta-learning/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Git</title>
+    <link>https://vecchioid.github.io/tags/git/</link>
+    <pubDate>Tue, 10 Jan 2023 15:22:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://vecchioid.github.io/tags/git/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>deep learning</title>
+    <link>https://vecchioid.github.io/tags/deep-learning/</link>
+    <pubDate>Tue, 10 Jan 2023 14:52:03 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://vecchioid.github.io/tags/deep-learning/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>machine learning</title>
+    <link>https://vecchioid.github.io/tags/machine-learning/</link>
+    <pubDate>Tue, 10 Jan 2023 14:52:03 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://vecchioid.github.io/tags/machine-learning/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>self supervised learning</title>
+    <link>https://vecchioid.github.io/tags/self-supervised-learning/</link>
+    <pubDate>Tue, 10 Jan 2023 14:52:03 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://vecchioid.github.io/tags/self-supervised-learning/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Cuda</title>
+    <link>https://vecchioid.github.io/tags/cuda/</link>
+    <pubDate>Mon, 02 Jan 2023 22:12:07 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://vecchioid.github.io/tags/cuda/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

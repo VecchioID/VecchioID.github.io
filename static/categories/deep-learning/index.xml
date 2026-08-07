@@ -1,0 +1,100 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Deep Learning - Category - Vecchio Blog</title>
+        <link>https://vecchioid.github.io/categories/deep-learning/</link>
+        <description>Deep Learning - Category - Vecchio Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 01 Feb 2023 15:05:02 &#43;0800</lastBuildDate><atom:link href="https://vecchioid.github.io/categories/deep-learning/" rel="self" type="application/rss+xml" /><item>
+    <title>Continual_learning</title>
+    <link>https://vecchioid.github.io/posts/continual_learning/</link>
+    <pubDate>Wed, 01 Feb 2023 15:05:02 &#43;0800</pubDate>
+    <author>Vecchio</author>
+    <guid>https://vecchioid.github.io/posts/continual_learning/</guid>
+    <description><![CDATA[Continual Learning Tutorials Part fromDeepMind Part fromGoogle Research
+Enabling Continual Learning in Neural Networks Computer programs that learn to perform tasks quickly forget them. We show that learning rules can be modified so that program can remember old one when learning new one. These programs are able to learn progressively and adaptively and this is an important step towards more general artificial intelligence.
+Deep neural networks are the most successful techniques in machine learning for solving a variety of tasks including language translation, image classification and image generation.]]></description>
+</item>
+<item>
+    <title>Tuning_playbook</title>
+    <link>https://vecchioid.github.io/posts/tuning_playbook/</link>
+    <pubDate>Sat, 28 Jan 2023 18:53:19 &#43;0800</pubDate>
+    <author>origin by google, Vecchio secondary creation</author>
+    <guid>https://vecchioid.github.io/posts/tuning_playbook/</guid>
+    <description><![CDATA[本文是汉化版本
+文档适合什么样的人 这篇文档适用于对优化深度学习模型感兴趣的工程师和研究人员。假定阅读者已经初步具备了机器学习和深度学习相关的基本知识。
+这篇文档的重点在于超参数的调整过程。涉及了一些深度学习训练相关的知识，如pipeline implementation and optimization，但是并不会细致的讲解。
+我们假设机器学习问题是一个监督学习问题，或者看起来类似的如自监督问题，也就是说，本文档中的一些规定也可适用于其他类型的问题。
+为什么需要这本调优手册？ 目前，想要深度神经网络在实践中正常运行，需要付出大量的努力和猜想时间。糟糕的是，很少有人去记录使肾虚学习模型获得良好结果的方法。
+Guide for starting a new project many of the decisions we make over the course of tuning can be made once at the beginging of a project and 只有在情况发生变化的时候才需要重新考虑。
+our guidance below makes the following assumptions:
+问题制定、数据清理等基本工作已经完成，花时间在模型架构和训练配置上是有意义的 已经有一个进行训练和评估的基本pipeline，并且可以为各种感兴趣的模型执行训练和预测工作。 选择好适当的测试标准，这些测试标准应该能够尽可能的反映出实际部署环境所要测量的内容。 选择模型结构 Summary： 当开启一个新项目的时候，尽量使用一个已经work的模型。]]></description>
+</item>
+<item>
+    <title>Self Supervised Learning</title>
+    <link>https://vecchioid.github.io/posts/self-supervised-learning/</link>
+    <pubDate>Tue, 10 Jan 2023 14:52:03 &#43;0800</pubDate>
+    <author>Vecchio</author>
+    <guid>https://vecchioid.github.io/posts/self-supervised-learning/</guid>
+    <description><![CDATA[Self Supervised Learning Tutorials SSL is a learning process without supervised information labeled by people, it still can be viewed as a supervised learning process without inaction with humans. Labels are exist, since we need pretext contents to supervise the learning process.
+There are three main forms of SSL, (1) loss function, such as contrastive learning and GAN or VAE (2) pretext task,
+Three classical paper of SSL:
+(1) CVPR 2020 ORAL MOCO &ldquo;Momentum Contrast for Unsupervised Visual Representation Learning.]]></description>
+</item>
+<item>
+    <title>Instructions for Install Nvidia Drivers Cuda and Cudnn</title>
+    <link>https://vecchioid.github.io/posts/instructions-for-install-nvidia-drivers-cuda-and-cudnn/</link>
+    <pubDate>Mon, 02 Jan 2023 22:12:07 &#43;0800</pubDate>
+    <author>Vecchio</author>
+    <guid>https://vecchioid.github.io/posts/instructions-for-install-nvidia-drivers-cuda-and-cudnn/</guid>
+    <description><![CDATA[1. install ubuntu Nvidia drivers ubuntu-drivers devices # display alternaive version of nvidia drivers sudo apt install nvidia-driver-515 or choose to install driver and cuda automatically:
+sudo ubuntu-drivers autoinstall Note: after reboot, choose enroll key to input your passwd, after this, nvidia-smi would work.
+enroll mok;continue;yes;input passwd;reboot;
+2. install cuda manual, this tutorial is suitable for ubuntu22.04 x86_x64 deb(local) 补充：由于ubuntu22.04需要安装liburcu6软件包，不然cuda安装会少依赖。所以这里需要自己下载并安装 https://ubuntu.pkgs.org/20.04/ubuntu-main-amd64/liburcu6_0.11.1-2_amd64.deb.html sudo dpkg -i xxxxx
+2.1 visit the web to obey the instructions provided by nvidia: https://developer.]]></description>
+</item>
+<item>
+    <title>DDPM-公式推导</title>
+    <link>https://vecchioid.github.io/posts/ddpm_%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/</link>
+    <pubDate>Mon, 02 Jan 2023 12:53:40 &#43;0800</pubDate>
+    <author>Vecchio</author>
+    <guid>https://vecchioid.github.io/posts/ddpm_%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC/</guid>
+    <description><![CDATA[一、前向扩散过程 从真实数据中采样一个点：，接下来我们定义一个前向的扩散过程，在这个扩散过程中我们逐步向图像中添加高斯噪声，在$T$步之后产生一个各向同性的高斯分布。在这个过程中会产生一些列的噪声样本，分别为。步长的大小通过一个方差表控制：${\beta_t \in (0, 1)}_{t=1}^T$。
+在扩散的过程中，样本$x_0$逐渐丧失了自己的特征并且随着时间的变化。$T \to \infty$，$x _{T}$会变成各向同性的高斯分布。
+使用重参数技巧，我们可以的得到任意时间点的样本$x_{t}$，令$\alpha_t = 1 - \beta_t$， ：
+二、逆向扩散过程 如果我们能反转上述过程并从$q(\mathbf{x}_{t-1} \vert \mathbf{x}_t)$中进行采样，我们就能从一个标准的高斯分布中$\mathbf{x}_T \sim \mathcal{N}(\mathbf{0}, \mathbf{I})$恢复真实的样本。
+如果$\beta_{t}$足够小，$ q(\mathbf{x}_{t-1} \vert \mathbf{x}_t)$也是一个高斯分布。
+但是是不可解的，因此我们需要学习一个模型$p_{\theta}$来近似这个反向的扩散过程。
+2.1 近似逼近 是什么样的分布？ Feller等人在1949年证明连续扩散过程的逆转具有与正向过程相同的分布形式。 当扩散率$\beta_{t}$足够小的时候，扩散次数足够多时，离散扩散过程接近于连续扩散过程，的分布形式和一致，都是高斯分布。但是很难写出的分布参数，所以要用 $p_{\theta}(x_{t-1}|x_{t})$ 来近似 。 其中$ \mu_{\theta}$和 都是要学习的函数，接受$ x_{t} $和 $t$ 作为参数。
+连续迭代多次后，可以还原得到真实的数据分布$p_{\theta}(x_{0})$为： $$p_{\theta}(x_{0}) = \int p_{\theta}(x_{0:T})dx_{1:T}$$ 其中： 以上是近似分布$p_{\theta}(x_{t-1}|x_{t})$的分析过程，
+这个形式和VAE很像，因此我们可以用变分下界去优化 负的对数似然函数： 这个我比较熟悉，通过Jensen不等式也能直观的得到以上结果，这时候我们要优化的目标函数就变成了最小化交叉熵： 为了让等式中每个项都是可以计算的，目标函数可以进一步重写为KL-divergence和熵，细节推导见(Sohl-Dickstein et al., 2015): 分开看变分下界损失的每一项： $L$中每一个KL项（除了$L_{0}$），都比较了两个高斯分布之间的距离，可以求解。$L_{T}$是常量，因此可以被忽略不计，因为$q$没有可学习的参数，而$x_{T}$是高斯噪声。Ho et al. 2020 使用离散的解码器从 中建模$L_{0}$。
+参数化$L_{t}$作为训练损失 这个解释比较清楚： 分布$p_{\theta}(x_{t-1}|x_{t})$是一个高斯分布，其均值和标准差由diffusion模型网络预测产生。而分布$q(x_{t-1}|x_{t},x_{0})$可以根据贝叶斯定律得到也是一个高斯分布，即： 这里面的均值和方差分别为： 最小化这个损失项就是拉近q和p这俩分布的距离。只需要定义一个网络$\mu_{\theta}(x_{t},t)$ ,使用L2约束其预测值同$\tilde \mu_{t}(x_{t},x_{0})$一致即可。这里面假设方差一样的，就不用计算了，降低了计算的难度。因为： $\mu_{\theta}(x_{t},t)$在给定$x_{t}$的情况下，需要预测出，为了进一步降低学习难度，可直接定义： 这样可以继续简化$L_{t}$: 上面这个公式表示在优化的时候，采样和$z_{t}\in \mathcal{N}(0,I)$后计算，然后联合时间$t$，送入$z_{\theta}$，约束其与$z_{t}$一致。]]></description>
+</item>
+<item>
+    <title>Tricks for deep learning</title>
+    <link>https://vecchioid.github.io/posts/tricks-for-deep-learning/</link>
+    <pubDate>Mon, 02 Jan 2023 12:53:40 &#43;0800</pubDate>
+    <author>Vecchio</author>
+    <guid>https://vecchioid.github.io/posts/tricks-for-deep-learning/</guid>
+    <description><![CDATA[DL 调参技巧 不管什么模型，先在一个较小的训练集上train和test，看看它能不能过拟合。如果不能过拟合，可能是学习率太大，或者代码写错了。先调小学习率试一下，如果还不行就去检查代码，先看dataloader输出的数据对不对，再看模型每一步的size是否符合自己期待。
+看train/eval的loss曲线，正常的情况应该是train loss呈log状一直下降最后趋于稳定，eval loss开始时一直下降到某一个epoch之后开始趋于稳定或开始上升，这时候可以用early stopping保存eval loss最低的那个模型。如果loss曲线非常不正常，很有可能是数据处理出了问题，比如label对应错了，回去检查代码。
+不要一开始就用大数据集，先在一个大概2w训练集，2k测试集的小数据集上调参。
+尽量不要自己从头搭架子（新手和半新手）。找一个已经明确没有bug能跑通的其它任务的架子，在它的基础上修改。否则debug过程非常艰难，因为有时候是版本迭代产生的问题，修改起来很麻烦。
+优化器优先用adam，学习率设1e-3或1e-4，再试Radam（LiyuanLucasLiu/RAdam）。不推荐sgdm，因为很慢。
+lrscheduler用torch.optim.lr_scheduler.CosineAnnealingLR，T_max设32或64，几个任务上试效果都不错。（用这个lr_scheduler加上adam系的optimizer基本就不用怎么调学习率了）
+有一些任务（尤其是有RNN的）要做梯度裁剪，torch.nn.utils.clip_grad_norm。
+参数初始化，lstm的h用orthogonal，其它用he或xavier。
+激活函数用relu一般就够了，也可以试试leaky relu。
+batchnorm和dropout可以试，放的位置很重要。优先尝试放在最后输出层之前，以及embedding层之后。RNN可以试layer_norm。有些任务上加了这些层可能会有负作用。
+metric learning中先试标label的分类方法。然后可以用triplet loss，margin这个参数的设置很重要。
+batchsize设置小一点通常会有一些提升，某些任务batchsize设成1有奇效。
+embedding层的embedsize可以小一些（64 or 128），之后LSTM或CNN的hiddensize要稍微大一些（256 or 512）。（ALBERT论文里面大概也是这个意思）
+模型方面，可以先用2或3层LSTM试一下，通常效果都不错。
+weight decay可以试一下，我一般用1e-4。
+有CNN的地方就用shortcut。CNN层数加到某一个值之后对结果影响就不大了，这个值作为参数可以调一下。
+GRU和LSTM在大部分任务上效果差不多。
+看论文时候不要全信，能复现的尽量复现一下，许多论文都会做低baseline，但实际使用时很多baseline效果很不错。
+对于大多数任务，数据比模型重要。面对新任务时先分析数据，再根据数据设计模型，并决定各个参数。例如nlp有些任务中的padding长度，通常需要达到数据集的90%以上，可用pandas的describe函数进行分析。
+直观的理解，batch size增加，学习率不增加的话每次更为仅为原来的1/k，所以需要增加epoch。对于收敛精度，由于增大了batchsize, 使梯度估计相较于baseline的梯度跟Ghia准确，噪声减少，更容易收敛到local minimal，类似于graient descent的效果。batchsize增大k倍，相当于梯度的方差减少k倍，因此梯度会更加准确。如果要茶匙方差，就要增大lr。之前是batchsize扩大k倍，lr增加sqrt(k)倍以提高训练速度，这也是linear scaling rule之前很多人常用的增大lr的方式。但是实际中，发现直接将lr增大k倍的效果比较好。
+Facebook现在改名叫meta，在Training Imagenet in 1 hour中提出了Linear Scaling Rule，当batchsize变为k倍的时候，learning rate同样需要乘以k就能达到同样的训练结果。看似简单的规律，这篇论文中给出了不完整的莅临解释和坚实的实验证明。]]></description>
+</item>
+</channel>
+</rss>

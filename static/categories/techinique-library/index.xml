@@ -1,0 +1,67 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Techinique library - Category - Vecchio Blog</title>
+        <link>https://vecchioid.github.io/categories/techinique-library/</link>
+        <description>Techinique library - Category - Vecchio Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 02 Feb 2023 19:38:16 &#43;0800</lastBuildDate><atom:link href="https://vecchioid.github.io/categories/techinique-library/" rel="self" type="application/rss+xml" /><item>
+    <title>OpenMMLab_tutorials_2</title>
+    <link>https://vecchioid.github.io/posts/openmmlab_tutorials_2/</link>
+    <pubDate>Thu, 02 Feb 2023 19:38:16 &#43;0800</pubDate>
+    <author>Vecchio</author>
+    <guid>https://vecchioid.github.io/posts/openmmlab_tutorials_2/</guid>
+    <description><![CDATA[Image classification Supervised learning &amp; Development History Start from AlexNet, deep learning ushers in a new era.
+Deep neural networks going deeped in 2012-2014, such as VGG-19 and GoogLeNet-22.
+And then the accuracy degradation problem was encountered. ResNet solved this problem by using residual learning. Residual connectiong make the loss surface more smooth.
+后续resnet也有很多改进工作，如ResNeXt，之后神经网络也可以采用神经结构搜索来实现更好performance网络结构的搜索。
+之后，在视觉发展中迎来了新时代，Vision Transformer，一度占据榜首，之后ConvNeXt问世，暂时证明比ViT好一点。
+视觉模型在ImageNet上的发展历程如下图所示：
+以上都是监督学习的范式，监督学习的范式下图所示：
+Self-supervised learning 近些年，自监督学习也发展的很好，一般的SSL范式如下：]]></description>
+</item>
+<item>
+    <title>OpenMMLab_tutorials</title>
+    <link>https://vecchioid.github.io/posts/openmmlab_tutorials/</link>
+    <pubDate>Wed, 01 Feb 2023 22:16:10 &#43;0800</pubDate>
+    <author>Vecchio</author>
+    <guid>https://vecchioid.github.io/posts/openmmlab_tutorials/</guid>
+    <description><![CDATA[Introduction OpenMMLab号称是深度学习时代最完整的计算机视觉开源算法体系，其提供了统一先进的底层机构，覆盖计算机视觉众多方向，并提供最经典最前沿的算法支持，并提供了统一的基准和开箱即用的工作，是AI从业人员或科研人员利器。
+OpenMMLab开源历程如图所示：
+如上图所示，OpenMMLab的训练框架为PyTorch,其基础库为MMCV和MMEngine,在具体的上层算法框架里面则包含众多计算机视觉方向，如image classification, object detection, object detection3D 和姿态估计以及光流估计等等，拥有超过30+的视觉算法库，称得上是计算机视觉的百宝箱。
+总体架构概览，算法框架包含如图所示，
+算法训练-部署一体化]]></description>
+</item>
+<item>
+    <title>Git Tutorials</title>
+    <link>https://vecchioid.github.io/posts/git-tutorials/</link>
+    <pubDate>Tue, 10 Jan 2023 15:22:00 &#43;0800</pubDate>
+    <author>Vecchio</author>
+    <guid>https://vecchioid.github.io/posts/git-tutorials/</guid>
+    <description><![CDATA[Git Tutorial 首先查看git版本的版本 $ git version 接下来是配置git的选项 git config &ndash;global user.name &ldquo;xxx&rdquo;
+git config --global user.email &quot;x@x.com&quot; git init 如果选择git init会在文件夹下生成.git文件 git add test.txt
+git add . 添加进去后，git会暂时保存，使用git commit -m &ldquo;xxx&quot;提交，使用git log查看每次提交的日志。
+git log后想会退到指定版本的命令如下： git reset &ndash;hard commitID
+分支管理 git branch xx 创建分支 之后git branch -a 查看分支， git checkout 分支名称切换分支， 使用git merge xx(xx表示分支名称)合并分支
+如何参与开源项目 先fork，再git clone到本地，但是现在是基于个人仓库的，使用git remote -v可以看到只有自己仓库的链接。
+还需要添加上游代码库，git remote add upstream xxx(xxx指的是上游代码库的链接)
+如果要给别人加功能，建议先创建一个分支，使用git checkout -b xxx来创建并切换进入名为xxx的分支。
+之后标准流程走一遍 git add .]]></description>
+</item>
+<item>
+    <title>服务器安装jupyter Notebook流程</title>
+    <link>https://vecchioid.github.io/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/</link>
+    <pubDate>Mon, 02 Jan 2023 13:58:44 &#43;0800</pubDate>
+    <author>Vecchio</author>
+    <guid>https://vecchioid.github.io/posts/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%89%E8%A3%85jupyter-notebook%E6%B5%81%E7%A8%8B/</guid>
+    <description><![CDATA[一、ubuntu 下安装jupyter notebook 1、使用conda安装
+conda install jupyter notebook 2、使用pip安装
+pip install jupyter notebook 二、Jupyter notebook配置 1、生成配置文件
+jupyter notebook --generate-config 2、创建密码
+使用python中的 passwd() 创建密码，终端输入 ipython 打开 ipython 并输入：
+In [1]: from notebook.auth import passwd In [2]: passwd() Enter password: ****** Verify password: ****** Out [2]: 'sha1:...' 复制Out [2] 显示的密码（&lsquo;sha1:&hellip;&rsquo; 包括引号）。也可能不是sha开头的。
+3、修改jupyter notebook的配置文件
+打开配置文件
+vim ~/.jupyter/jupyter_notebook_config.py 在该文件中做如下修改或直接在文件尾端添加：
+c.NotebookApp.allow_remote_access = True #允许远程连接 c.NotebookApp.ip='*' # 设置所有ip皆可访问 c.NotebookApp.password = u'sha:..' #之前复制的密码,或者输入的字符 c.NotebookApp.notebook_dir = '/usr/local/spark/mycode/Covid-19-Analysis' # 启动的默认目录 c.]]></description>
+</item>
+</channel>
+</rss>

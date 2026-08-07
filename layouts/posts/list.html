@@ -1,13 +1,19 @@
 {{ define "main" }}
-<section class="page-head shell">
-  <p class="eyebrow">Blog</p>
-  <h1>Writing</h1>
-  <p class="page-lede">New posts are written in Markdown and deployed automatically. The 2023 archive is preserved at its original URLs.</p>
+<section class="page-head shell blog-head">
+  <div>
+    <p class="eyebrow">Blog</p>
+    <h1>Writing</h1>
+  </div>
+  <p class="page-lede">New articles are written in Markdown and deployed automatically. Earlier posts remain available at their original URLs and retain their original assets.</p>
 </section>
+
 <section class="section shell">
   {{ if .Pages }}
-  <div class="section-heading"><p class="eyebrow">New</p><h2>Markdown posts</h2></div>
-  <div class="writing-list">
+  <div class="section-heading split-heading">
+    <div><p class="eyebrow">New</p><h2>Markdown posts</h2></div>
+    <span class="section-note">宋体中文 · Times New Roman 英文/数字 · 19pt 固定行高</span>
+  </div>
+  <div class="writing-list elevated-list">
     {{ range .Pages.ByDate.Reverse }}
       <a class="writing-row" href="{{ .RelPermalink }}"><time>{{ .Date.Format "2006-01-02" }}</time><strong>{{ .Title }}</strong><span>→</span></a>
     {{ end }}

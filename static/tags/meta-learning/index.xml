@@ -1,0 +1,23 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>meta-learning - Tag - Vecchio Blog</title>
+        <link>https://vecchioid.github.io/tags/meta-learning/</link>
+        <description>meta-learning - Tag - Vecchio Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 13 Jan 2023 19:55:23 &#43;0800</lastBuildDate><atom:link href="https://vecchioid.github.io/tags/meta-learning/" rel="self" type="application/rss+xml" /><item>
+    <title>Meta Learning Tutorials</title>
+    <link>https://vecchioid.github.io/posts/meta-learning-tutorials/</link>
+    <pubDate>Fri, 13 Jan 2023 19:55:23 &#43;0800</pubDate>
+    <author>Vecchio</author>
+    <guid>https://vecchioid.github.io/posts/meta-learning-tutorials/</guid>
+    <description><![CDATA[Meta Learning Tutorials Learning how to learn is dubbed as meta learning.
+meta-learning 问题定义 在本文中,我们主要关注监督学习中的元学习任务，比如图像分类。
+A Simple View few-shot learning是元学习监督学习的一种学习方法。
+小样本学习的几个概念，小样本学习的数据集包含三个，一个是training set, 一个是support set， 另一个是query set。
+训练集中并不包含query set中的类别， query set中的类别存在于support set中。support set中的类别仅有少量样本，无法支撑训练。
+training set的目的是训练网络区分同类和异类的能力，这种能力的训练自然需要大量的样本。
+现在我们来看Support set， support set中存在k类样本，每一类中有n个样本，我们将类别叫做k-way， 将每类中的样本数叫做n-shot。way越来，n越少的时候越困难，当每类仅存在一个样本时叫做one-shot learning, 是最难的任务。
+learner and meta-learner another popular view of meta-learning decomposes the model updata into two stages:
+a classifier $f_{\theta}$ is the &ldquo;learner&rdquo; model, trained for operating a given task. in the meantime, a optimizer $g_{\phi}$ leanrs how to update the learner model&rsquo;s parameters via the support set $S, \theta&rsquo;=g_{\phi}(\theta, S)$.]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,23 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Git - Tag - Vecchio Blog</title>
+        <link>https://vecchioid.github.io/tags/git/</link>
+        <description>Git - Tag - Vecchio Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 10 Jan 2023 15:22:00 &#43;0800</lastBuildDate><atom:link href="https://vecchioid.github.io/tags/git/" rel="self" type="application/rss+xml" /><item>
+    <title>Git Tutorials</title>
+    <link>https://vecchioid.github.io/posts/git-tutorials/</link>
+    <pubDate>Tue, 10 Jan 2023 15:22:00 &#43;0800</pubDate>
+    <author>Vecchio</author>
+    <guid>https://vecchioid.github.io/posts/git-tutorials/</guid>
+    <description><![CDATA[Git Tutorial 首先查看git版本的版本 $ git version 接下来是配置git的选项 git config &ndash;global user.name &ldquo;xxx&rdquo;
+git config --global user.email &quot;x@x.com&quot; git init 如果选择git init会在文件夹下生成.git文件 git add test.txt
+git add . 添加进去后，git会暂时保存，使用git commit -m &ldquo;xxx&quot;提交，使用git log查看每次提交的日志。
+git log后想会退到指定版本的命令如下： git reset &ndash;hard commitID
+分支管理 git branch xx 创建分支 之后git branch -a 查看分支， git checkout 分支名称切换分支， 使用git merge xx(xx表示分支名称)合并分支
+如何参与开源项目 先fork，再git clone到本地，但是现在是基于个人仓库的，使用git remote -v可以看到只有自己仓库的链接。
+还需要添加上游代码库，git remote add upstream xxx(xxx指的是上游代码库的链接)
+如果要给别人加功能，建议先创建一个分支，使用git checkout -b xxx来创建并切换进入名为xxx的分支。
+之后标准流程走一遍 git add .]]></description>
+</item>
+</channel>
+</rss>

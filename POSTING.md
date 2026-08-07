@@ -1,34 +1,29 @@
-# Publishing a new post
+# Writing a new Blog post
 
-## Browser-only workflow
-
-1. Open the GitHub repository.
-2. Go to `content/posts/`.
-3. Choose **Add file → Create new file**.
-4. Name it, for example, `flash-attention.md`.
-5. Add front matter and Markdown content.
-6. Commit to `main`.
-7. GitHub Actions builds and deploys automatically.
-
-Template:
+Create a Markdown file in `content/posts/`.
 
 ```markdown
 ---
-title: "Post title"
-date: 2026-08-07T12:00:00+08:00
-summary: "One-sentence summary."
-tags: ["tag1", "tag2"]
+title: "文章标题"
+date: 2026-08-07T12:05:00+08:00
+summary: "一句话摘要"
+tags: ["LLM", "CUDA"]
 categories: ["AI Systems"]
-math: false
+math: true
 ---
 
-## Section
-
-Write in Markdown.
+这里开始写正文。
 ```
 
-Set `math: true` if the post uses TeX/LaTeX equations.
+Push to `main`; GitHub Actions publishes it automatically.
 
-## Drafts
+## Automatic typography
 
-Use `draft: true` to keep a post out of production. GitHub Pages builds without drafts by default.
+Future Markdown article body text is styled automatically:
+
+- Chinese -> Songti SC / STSong / SimSun / 宋体
+- English and digits -> Times New Roman when installed
+- 12pt body font
+- fixed 19pt line-height
+
+Headings, code and MathJax are intentionally excluded from the fixed body typography.

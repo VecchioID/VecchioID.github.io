@@ -1,42 +1,50 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "== VecchioID.github.io preflight =="
+echo "== Vecchio site preflight =="
 
 required=(
   hugo.toml
   .github/workflows/deploy.yml
-  scripts/recover_legacy.sh
   layouts/index.html
   layouts/posts/list.html
+  layouts/_default/single.html
   content/cv/_index.md
   data/legacy_posts.yaml
+  static/assets/site.css
+  static/assets/site.js
 )
 
 for f in "${required[@]}"; do
-  [[ -f "$f" ]] || { echo "Missing: $f"; exit 1; }
+  [[ -f "$f" ]] || { echo "ERROR: missing $f"; exit 1; }
 done
 
-echo "Source files: OK"
+echo "Core source files: OK"
 
-if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-  marker="posts/continual_learning/index.html"
-  found=""
-  while IFS= read -r commit; do
-    if git cat-file -e "${commit}:${marker}" 2>/dev/null; then
-      found="$commit"
-      break
-    fi
-  done < <(git rev-list --all -- "$marker")
-
-  if [[ -n "$found" ]]; then
-    echo "Legacy blog history: OK ($found)"
-  else
-    echo "WARNING: legacy blog marker was not found in this repository's git history."
-    echo "The new site will work, but old article bodies cannot be recovered automatically."
+missing=0
+count=0
+while IFS= read -r url; do
+  [[ -z "$url" ]] && continue
+  count=$((count + 1))
+  rel="${url#/}"
+  rel="${rel%/}"
+  f="static/${rel}/index.html"
+  if [[ ! -f "$f" ]]; then
+    echo "ERROR: legacy article missing from physical static snapshot: $url"
+    missing=$((missing + 1))
   fi
-else
-  echo "WARNING: not running inside a git repository; legacy-history check skipped."
+done < <(sed -nE 's/^[[:space:]]*url:[[:space:]]*"([^"]+)".*/\1/p' data/legacy_posts.yaml)
+
+if [[ "$count" -eq 0 ]]; then
+  echo "ERROR: no legacy-post URLs found in data/legacy_posts.yaml"
+  exit 1
 fi
 
+if [[ "$missing" -ne 0 ]]; then
+  echo "ERROR: $missing of $count legacy posts are absent."
+  echo "Run the one-click installer against the existing repository before pushing."
+  exit 1
+fi
+
+echo "Legacy static archive: all $count posts present"
 echo "Preflight complete."

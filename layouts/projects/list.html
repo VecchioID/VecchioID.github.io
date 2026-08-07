@@ -1,0 +1,20 @@
+{{ define "main" }}
+<section class="page-head shell">
+  <p class="eyebrow">Open source</p>
+  <h1>Projects</h1>
+  <p class="page-lede">Selected research code, training-system experiments, and accelerator-performance work.</p>
+</section>
+<section class="section shell">
+  <div class="project-grid large">
+    {{ range hugo.Data.projects }}
+      <article class="project-card">
+        <span class="project-label">{{ .label }}</span>
+        <h2><a href="{{ .url }}">{{ .title }}</a></h2>
+        <p>{{ .description }}</p>
+        <div class="tag-row compact">{{ range .tags }}<span class="tag">{{ . }}</span>{{ end }}</div>
+        <p class="project-open"><a href="{{ .url }}">Open repository →</a></p>
+      </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

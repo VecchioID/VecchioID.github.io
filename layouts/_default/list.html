@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="page-head shell">
+  <p class="eyebrow">{{ .Section | default "Archive" }}</p>
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p class="page-lede">{{ . }}</p>{{ end }}
+</section>
+<section class="section shell prose">
+  {{ .Content }}
+  {{ if .Pages }}
+  <div class="writing-list">
+    {{ range .Pages.ByDate.Reverse }}
+      <a class="writing-row" href="{{ .RelPermalink }}"><time>{{ .Date.Format "2006-01-02" }}</time><strong>{{ .Title }}</strong><span>→</span></a>
+    {{ end }}
+  </div>
+  {{ end }}
+</section>
+{{ end }}

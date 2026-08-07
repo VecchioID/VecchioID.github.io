@@ -1,0 +1,29 @@
+baseURL = 'https://vecchioid.github.io/'
+languageCode = 'en-us'
+title = 'Kai Zhao | Vecchio'
+enableRobotsTXT = true
+summaryLength = 32
+
+[pagination]
+  pagerSize = 10
+
+[permalinks]
+  posts = '/posts/:slug/'
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+    lineNos = false
+    tabWidth = 4
+
+[params]
+  author = 'Kai Zhao'
+  github = 'https://github.com/VecchioID'
+  description = 'Research · Engineering · Notes — brain-inspired intelligence, representation learning, visual reasoning, and efficient AI systems.'

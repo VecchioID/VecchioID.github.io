@@ -1,0 +1,20 @@
+- title: "nano-npu-profile"
+  url: "https://github.com/VecchioID/nano-npu-profile"
+  label: "Accelerator Performance"
+  description: "A practical profiling and performance-debugging methodology covering bandwidth and compute baselines, Roofline analysis, operator optimization, model-level profiling, bottleneck diagnosis, Triton, and advanced kernel topics."
+  tags: ["NPU/GPU", "Profiling", "Roofline", "Kernel"]
+- title: "nano_deepspeed"
+  url: "https://github.com/VecchioID/nano_deepspeed"
+  label: "LLM Systems"
+  description: "A compact learning and implementation project covering training-memory analysis, LLM parallel strategies, DeepSpeed ZeRO, framework selection, and hands-on distributed-training experiments."
+  tags: ["LLM", "DeepSpeed", "Distributed Training"]
+- title: "ICNet"
+  url: "https://github.com/VecchioID/ICNet"
+  label: "Representation Learning"
+  description: "Source code for Learning Diversified Representations for Visual Abstract Reasoning."
+  tags: ["Visual Reasoning", "Representation Learning"]
+- title: "DRNet"
+  url: "https://github.com/VecchioID/DRNet"
+  label: "Visual Abstract Reasoning"
+  description: "Research code for Raven-style visual abstract reasoning and RPM experiments."
+  tags: ["RPM", "PyTorch", "Reasoning"]

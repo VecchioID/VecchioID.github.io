@@ -1,0 +1,28 @@
+{{ define "main" }}
+<section class="page-head shell">
+  <p class="eyebrow">Blog</p>
+  <h1>Writing</h1>
+  <p class="page-lede">New posts are written in Markdown and deployed automatically. The 2023 archive is preserved at its original URLs.</p>
+</section>
+<section class="section shell">
+  {{ if .Pages }}
+  <div class="section-heading"><p class="eyebrow">New</p><h2>Markdown posts</h2></div>
+  <div class="writing-list">
+    {{ range .Pages.ByDate.Reverse }}
+      <a class="writing-row" href="{{ .RelPermalink }}"><time>{{ .Date.Format "2006-01-02" }}</time><strong>{{ .Title }}</strong><span>→</span></a>
+    {{ end }}
+  </div>
+  {{ end }}
+
+  <div class="section-heading archive-heading"><p class="eyebrow">Preserved</p><h2>Legacy archive</h2></div>
+  <div class="archive-list">
+    {{ range hugo.Data.legacy_posts }}
+    <article class="archive-row">
+      <time>{{ .date }}</time>
+      <div><h3><a href="{{ .url }}">{{ .title }}</a></h3><p>{{ .category }}{{ with .tags }} · {{ delimit . " / " }}{{ end }}</p></div>
+      <a href="{{ .url }}" aria-label="Open {{ .title }}">→</a>
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

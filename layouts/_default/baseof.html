@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Params.author }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  <link rel="stylesheet" href="/assets/site.css">
+  <link rel="alternate" type="application/rss+xml" href="{{ with .OutputFormats.Get "rss" }}{{ .RelPermalink }}{{ end }}" title="{{ site.Title }}">
+  {{ if .Params.math }}
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  {{ end }}
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="/">Vecchio<span class="brand-dot">.</span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/research/"{{ if eq .Section "research" }} class="active"{{ end }}>Research</a>
+        <a href="/projects/"{{ if eq .Section "projects" }} class="active"{{ end }}>Projects</a>
+        <a href="/posts/"{{ if eq .Section "posts" }} class="active"{{ end }}>Blog</a>
+        <a href="/cv/"{{ if eq .Section "cv" }} class="active"{{ end }}>CV</a>
+        <a href="https://github.com/VecchioID">GitHub</a>
+        <button id="theme-toggle" class="icon-button" aria-label="Toggle theme" title="Toggle theme">◐</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-row">
+      <span>© {{ now.Year }} Kai Zhao</span>
+      <span>Research · Engineering · Notes</span>
+    </div>
+  </footer>
+  <script src="/assets/site.js"></script>
+</body>
+</html>

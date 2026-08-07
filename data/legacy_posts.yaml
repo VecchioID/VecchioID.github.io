@@ -1,0 +1,65 @@
+- title: "OpenMMLab_tutorials_2"
+  date: "2023-02-02"
+  url: "/posts/openmmlab_tutorials_2/"
+  category: "Techinique library"
+  tags: ["OpenMMLab"]
+- title: "Graph_Networks"
+  date: "2023-02-02"
+  url: "/posts/graph_networks/"
+  category: "Graph_Networks"
+  tags: ["Graph_Networks"]
+- title: "OpenMMLab_tutorials"
+  date: "2023-02-01"
+  url: "/posts/openmmlab_tutorials/"
+  category: "Techinique library"
+  tags: ["OpenMMLab"]
+- title: "Continual_learning"
+  date: "2023-02-01"
+  url: "/posts/continual_learning/"
+  category: "Deep Learning"
+  tags: ["Continual_learning"]
+- title: "Tuning_playbook"
+  date: "2023-01-28"
+  url: "/posts/tuning_playbook/"
+  category: "Deep Learning"
+  tags: ["tricks for deep learning"]
+- title: "Meta Learning Tutorials"
+  date: "2023-01-13"
+  url: "/posts/meta-learning-tutorials/"
+  category: "meta-learning"
+  tags: ["meta-learning"]
+- title: "Git Tutorials"
+  date: "2023-01-10"
+  url: "/posts/git-tutorials/"
+  category: "Techinique library"
+  tags: ["Git"]
+- title: "Self Supervised Learning"
+  date: "2023-01-10"
+  url: "/posts/self-supervised-learning/"
+  category: "Deep Learning"
+  tags: ["machine learning", "deep learning", "self supervised learning"]
+- title: "Instructions for Install Nvidia Drivers Cuda and Cudnn"
+  date: "2023-01-02"
+  url: "/posts/instructions-for-install-nvidia-drivers-cuda-and-cudnn/"
+  category: "Deep Learning"
+  tags: ["Nvidia", "Cuda", "Cudnn"]
+- title: "服务器安装jupyter Notebook流程"
+  date: "2023-01-02"
+  url: "/posts/服务器安装jupyter-notebook流程/"
+  category: "Techinique library"
+  tags: []
+- title: "DDPM-公式推导"
+  date: "2023-01-02"
+  url: "/posts/ddpm_公式推导/"
+  category: "Deep Learning"
+  tags: []
+- title: "Tricks for deep learning"
+  date: "2023-01-02"
+  url: "/posts/tricks-for-deep-learning/"
+  category: "Deep Learning"
+  tags: ["Tricks"]
+- title: "DL调参数技巧"
+  date: "2023-01-02"
+  url: "/posts/dl调参技巧/"
+  category: "Deep Learning"
+  tags: ["DL"]

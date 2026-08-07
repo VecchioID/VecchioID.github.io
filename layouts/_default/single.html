@@ -1,0 +1,18 @@
+{{ define "main" }}
+<article class="article shell-narrow">
+  <header class="article-head">
+    <a class="back-link" href="/posts/">← Writing</a>
+    <h1>{{ .Title }}</h1>
+    <div class="article-meta">
+      <time>{{ .Date.Format "January 2, 2006" }}</time>
+      {{ with .Params.categories }}<span>{{ delimit . " · " }}</span>{{ end }}
+      <span>{{ .ReadingTime }} min read</span>
+    </div>
+    {{ with .Summary }}<p class="article-summary">{{ . }}</p>{{ end }}
+  </header>
+  <div class="prose article-body">{{ .Content }}</div>
+  {{ with .Params.tags }}
+  <footer class="article-tags"><span>Tagged:</span>{{ range . }}<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}</footer>
+  {{ end }}
+</article>
+{{ end }}

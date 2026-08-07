@@ -139,10 +139,11 @@ button, input, textarea { font: inherit; }
   font-weight: 860;
 }
 .hero h1 {
-  background: linear-gradient(118deg, var(--text) 15%, color-mix(in srgb, var(--text) 76%, var(--accent)) 70%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  font-size: clamp(2.7rem, 4.6vw, 4.2rem);
+  line-height: 1.06;
+  letter-spacing: -.03em;
+  font-weight: 700;
+  color: var(--text);
 }
 .hero-lede {
   max-width: 840px;
@@ -361,7 +362,7 @@ button, input, textarea { font: inherit; }
   .nav-links { justify-content: flex-end; gap: 11px 14px; flex-wrap: wrap; font-size: .86rem; }
   .nav-links > a::after { display: none; }
   .hero { min-height: auto; padding: 78px 0 70px; grid-template-columns: 1fr; gap: 50px; }
-  .hero h1 { font-size: clamp(3.8rem, 18vw, 6.1rem); }
+  .hero h1 { font-size: clamp(2.7rem, 12vw, 3.8rem); }
   .two-col, .project-grid, .research-grid, .blog-head { grid-template-columns: 1fr; }
   .blog-head { gap: 28px; }
   .blog-head .page-lede { margin-top: 0; }
